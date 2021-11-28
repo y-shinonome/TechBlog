@@ -36,5 +36,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## コミットメッセージ接頭辞
 * fix：バグ修正
 * add：新規（ファイル）機能追加
-* update：機能修正（バグではない）
-* remove：削除（ファイル）
+* update：機能修正
+* move: ファイル移動
+* remove：ファイル削除
