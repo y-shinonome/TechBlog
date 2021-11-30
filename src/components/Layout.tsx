@@ -1,3 +1,5 @@
+import Header from './header'
+
 type Props = {
   children: React.ReactNode
 }
@@ -5,6 +7,7 @@ type Props = {
 const Layout: React.VFC<Props> = ({ children }) => {
   return (
     <>
+      <Header />
       <div>{children}</div>
     </>
   )

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hover-bright {
+  @apply transition duration-300 hover:bg-commonWhite/20 active:bg-commonWhite/60;
+}
