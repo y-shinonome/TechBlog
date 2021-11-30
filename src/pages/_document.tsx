@@ -4,8 +4,8 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja-JP">
-        <Head/>
-        <body className="bg-commonWhite text-commonBlack">
+        <Head />
+        <body className="text-commonBlack bg-commonWhite">
           <Main /> 
           <NextScript />
         </body>

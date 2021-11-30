@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .hover-bright {
-  @apply transition duration-300 hover:bg-commonWhite/20 active:bg-commonWhite/60;
+  @apply hover:bg-commonWhite/20 active:bg-commonWhite/60 transition duration-300;
 }

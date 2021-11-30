@@ -19,11 +19,11 @@ const Header = () => {
 
   return (
     <>
-      <div className="fixed text-lg ml-1 font-bold text-commonWhite z-10">
+      <div className="fixed z-10 ml-1 text-commonWhite text-lg font-bold">
         techblog.shi-nono.me
       </div>
       <button
-        className="fixed right-0 p-1 mr-1 my-1 text-3xl mix-blend-difference text-commonWhite rounded-lg text-center hover-bright z-30"
+        className="hover-bright fixed z-30 right-0 mr-1 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
         aria-label="メニューボタン"
         onClick={toggleSideBar}
       >
@@ -31,7 +31,7 @@ const Header = () => {
       </button>
       <div className="h-[50px] w- bg-commonBlack"></div>
       <div
-        className="bg-commonBlack h-[15vw] max-h-[60px] sticky top-0"
+        className="h-[15vw] max-h-[60px] sticky top-0 bg-commonBlack"
         style={{ clipPath: 'url(#headerClip)' }}
       >
         <svg>
