@@ -1,16 +1,33 @@
+import React, { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
+import { VscChromeClose } from 'react-icons/vsc'
+import SideBar from './sideBar'
+
+export const sideBarContext = React.createContext(
+  {} as {
+    isOpen: boolean
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  }
+)
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleSideBar = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <>
-      <div className="fixed text-lg font-bold text-commonWhite z-10 ml-1">
+      <div className="fixed text-lg ml-1 font-bold text-commonWhite z-10">
         techblog.shi-nono.me
       </div>
       <button
-        className="fixed mix-blend-difference text-commonWhite right-0 p-1 mr-1 my-1 rounded-lg text-center text-3xl hover-bright z-10"
+        className="fixed right-0 p-1 mr-1 my-1 text-3xl mix-blend-difference text-commonWhite rounded-lg text-center hover-bright z-30"
         aria-label="メニューボタン"
+        onClick={toggleSideBar}
       >
-        <AiOutlineMenu />
+        {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
       </button>
       <div className="h-[50px] w- bg-commonBlack"></div>
       <div
@@ -26,6 +43,9 @@ const Header = () => {
           </clipPath>
         </svg>
       </div>
+      <sideBarContext.Provider value={{ isOpen, setIsOpen }}>
+        <SideBar />
+      </sideBarContext.Provider>
     </>
   )
 }
