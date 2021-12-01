@@ -2,9 +2,13 @@ import Image from 'next/image'
 import { FaGithub } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 
-const Profile: React.VFC = () => {
+type Props = {
+  className?: string
+}
+
+const Profile: React.VFC<Props> = ({ className }) => {
   return (
-    <article>
+    <article className={className}>
       <div className="flex items-center mb-2">
         <div className="h-[100px] w-[100px] relative">
           <Image
@@ -14,7 +18,7 @@ const Profile: React.VFC = () => {
             objectFit="cover"
           />
         </div>
-        <div className="ml-4 font-bold">しののめ</div>
+        <div className="ml-4 text-lg font-bold">しののめ</div>
       </div>
       <div className="mb-2">
         SampleText
