@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { sideBarContext } from '../components/header'
 import Profile from '../components/profile'
 import Categories from '../components/categories'
+import Share from '../components/share'
 
 const SideBar: React.VFC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
@@ -25,6 +26,7 @@ const SideBar: React.VFC = () => {
       >
         <Profile className="mb-6" />
         <Categories />
+        <Share />
       </nav>
     </>
   )
