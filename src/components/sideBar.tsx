@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { sideBarContext } from '../components/header'
 import Profile from '../components/profile'
+import Categories from '../components/categories'
 
 const SideBar: React.VFC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
@@ -22,7 +23,8 @@ const SideBar: React.VFC = () => {
           isOpen ? 'w-[70%] px-3' : 'w-0'
         }`}
       >
-        <Profile />
+        <Profile className="mb-6" />
+        <Categories />
       </nav>
     </>
   )
