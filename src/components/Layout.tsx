@@ -1,4 +1,5 @@
 import Header from './header'
+import Footer from './Footer'
 
 type Props = {
   children: React.ReactNode
@@ -9,6 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Header />
       <div>{children}</div>
+      <Footer />
     </>
   )
 }

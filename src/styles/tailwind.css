@@ -5,3 +5,7 @@
 .hover-bright {
   @apply hover:bg-commonWhite/20 active:bg-commonWhite/60 transition duration-300;
 }
+
+.text-link {
+  @apply text-[#1111EE] hover:text-[#000098] underline;
+}
