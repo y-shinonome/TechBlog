@@ -5,7 +5,7 @@ type props = {
 const Button: React.FC<props> = ({ children, className }) => {
   return (
     <button
-      className={`active:bg-commonBlack/40 active:border-commonBlack/0 px-1 hover:text-commonWhite font-bold hover:bg-commonBlack border-2 border-commonBlack transition
+      className={`px-1 hover:text-commonWhite font-bold hover:bg-commonBlack active:bg-opacity-40 border-2 border-commonBlack active:border-opacity-0 transition
       ${className}`}
     >
       {children}
