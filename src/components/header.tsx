@@ -19,11 +19,11 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="fixed z-10 ml-1 text-commonWhite text-lg font-bold">
+      <h1 className="fixed z-10 ml-3 my-1 text-commonWhite text-lg font-bold">
         techblog.shi-nono.me
-      </div>
+      </h1>
       <button
-        className="hover-bright fixed z-30 right-0 mr-1 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
+        className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
         aria-label="メニューボタン"
         onClick={toggleSideBar}
       >
