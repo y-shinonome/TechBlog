@@ -10,7 +10,7 @@ export const sideBarContext = React.createContext(
   }
 )
 
-const Header = () => {
+const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleSideBar = () => {

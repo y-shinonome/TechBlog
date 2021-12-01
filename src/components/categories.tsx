@@ -5,7 +5,7 @@ type Props = {
   className?: string
 }
 
-const Categories: React.VFC<Props> = ({ className }) => {
+const Categories: React.FC<Props> = ({ className }) => {
   return (
     <article className={className}>
       <h2 className="mb-1 text-lg font-bold">All Categories</h2>

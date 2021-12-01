@@ -4,7 +4,7 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout: React.VFC<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header />

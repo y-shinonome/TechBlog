@@ -4,7 +4,7 @@ import Profile from '../components/profile'
 import Categories from '../components/categories'
 import Share from '../components/share'
 
-const SideBar: React.VFC = () => {
+const SideBar: React.FC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
 
   const toggleSideBar = () => {

@@ -6,7 +6,7 @@ type Props = {
   className?: string
 }
 
-const Profile: React.VFC<Props> = ({ className }) => {
+const Profile: React.FC<Props> = ({ className }) => {
   return (
     <article className={className}>
       <div className="flex items-center mb-2">
