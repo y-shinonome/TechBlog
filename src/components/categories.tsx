@@ -1,9 +1,13 @@
 import Button from '../components/button'
 import categoryList from '../utils/categoryList'
 
-const Categories: React.VFC = () => {
+type Props = {
+  className?: string
+}
+
+const Categories: React.VFC<Props> = ({ className }) => {
   return (
-    <article>
+    <article className={className}>
       <h2 className="mb-1 text-lg font-bold">All Categories</h2>
       <ul className="flex flex-wrap">
         {categoryList.map((category, index) => (

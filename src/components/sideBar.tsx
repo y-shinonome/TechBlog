@@ -25,7 +25,7 @@ const SideBar: React.VFC = () => {
         }`}
       >
         <Profile className="mb-6" />
-        <Categories />
+        <Categories className="mb-6" />
         <Share />
       </nav>
     </>
