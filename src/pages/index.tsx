@@ -3,23 +3,7 @@ import { client } from '../api/microCMS'
 import BlogCard from '../components/blogCard'
 
 type Props = {
-  posts: {
-    id: string
-    title: string
-    heroImage: {
-      url: string
-    }
-    categories: [
-      {
-        name: string
-        id: string
-      }
-    ]
-    description: string
-    body: string
-    publishedDate: Date
-    updatedDate: Date
-  }[]
+  posts: post[]
 }
 
 const Index: NextPage<Props> = ({ posts }) => {
