@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <h1 className="fixed z-10 ml-3 my-1 text-commonWhite text-lg font-bold">
+      <h1 className="fixed z-20 ml-3 my-1 text-commonWhite text-lg font-bold">
         techblog.shi-nono.me
       </h1>
       <button
@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       </button>
       <div className="h-[50px] w- bg-commonBlack"></div>
       <div
-        className="h-[15vw] max-h-[60px] sticky top-0 bg-commonBlack"
+        className="h-[15vw] max-h-[60px] sticky z-10 top-0 mb-10 bg-commonBlack"
         style={{ clipPath: 'url(#headerClip)' }}
       >
         <svg>
