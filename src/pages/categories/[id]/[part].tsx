@@ -13,12 +13,10 @@ type Props = {
   categoryName: string
 }
 
-type Paths = {
-  params: {
-    id: string
-    part: string
-  }
-}[]
+type Params = {
+  id: string
+  part: string
+}
 
 type ApiContainer = {
   contents: {
@@ -79,7 +77,7 @@ export const getStaticPaths = async () => {
     })
   )
   //id毎に分割されている配列を一つに纏める
-  const paths: Paths = []
+  const paths: { params: Params }[] = []
   pathList.map((item) => {
     paths.push(...item)
   })
@@ -90,7 +88,9 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
   const offset = Number(params?.part) * 5 - 5
   const postContainer = await client.get({
     endpoint: 'posts',

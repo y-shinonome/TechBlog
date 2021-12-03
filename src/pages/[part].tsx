@@ -51,7 +51,7 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const offset = Number(params?.part) * 5 - 5
   const postData = await client.get({
     endpoint: 'posts',
