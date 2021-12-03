@@ -88,12 +88,14 @@ const BlogCard: NextPage<Props> = ({ post }) => {
               )}
             </div>
           </div>
-          <div>
-            <Button className="px-1">
-              投稿を読む
-              <VscArrowRight className="ml-1" />
-            </Button>
-          </div>
+          <Link href={`/posts/${post.id}`}>
+            <a>
+              <Button className="px-1">
+                投稿を読む
+                <VscArrowRight className="ml-1" />
+              </Button>
+            </a>
+          </Link>
         </div>
       </div>
     </section>
