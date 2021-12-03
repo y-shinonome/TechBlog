@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { VscChromeClose } from 'react-icons/vsc'
 import SideBar from './sideBar'
@@ -20,7 +21,9 @@ const Header: React.FC = () => {
   return (
     <>
       <h1 className="fixed z-20 ml-3 my-1 text-commonWhite text-lg font-bold">
-        techblog.shi-nono.me
+        <Link href="/1">
+          <a>techblog.shi-nono.me</a>
+        </Link>
       </h1>
       <button
         className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
