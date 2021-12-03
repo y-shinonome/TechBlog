@@ -20,7 +20,7 @@ const Categories: React.FC<Props> = ({ className }) => {
       <ul className="flex flex-wrap">
         {categoryList.map((category, index) => (
           <li key={index} className="mb-2 mr-2">
-            <Button className="px-[2px]">{category.name}</Button>
+            <Button className="px-1">{category.name}</Button>
           </li>
         ))}
       </ul>
