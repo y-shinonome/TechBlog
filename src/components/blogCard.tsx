@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from '../components/button'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
@@ -62,7 +63,11 @@ const BlogCard: NextPage<Props> = ({ post }) => {
             <ul className="flex flex-wrap mb-2">
               {post.categories.map((category, index) => (
                 <li key={index} className="mb-1 mr-1 text-xs">
-                  <Button className="py-[2px] px-1">{category.name}</Button>
+                  <Link href={`/categories/${category.id}/1`}>
+                    <a>
+                      <Button className="py-[2px] px-1">{category.name}</Button>
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
