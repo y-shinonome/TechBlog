@@ -28,7 +28,7 @@ type ApiContainer = {
   totalCount: number
 }
 
-const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
+const CategoriesSplit: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
       <ul className="px-3">
@@ -117,4 +117,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 }
 
-export default PostsSplit
+export default CategoriesSplit
