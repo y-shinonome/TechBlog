@@ -25,6 +25,7 @@ const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
       <Pagination
         totalCount={pageCount.totalCount}
         currentPage={pageCount.part}
+        cllassName="mb-10"
       />
     </>
   )
