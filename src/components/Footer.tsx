@@ -7,8 +7,8 @@ const Footer: React.FC = () => {
     <div className="border-t-[1px] border-commonBlack/20 px-3">
       <footer className="max-w-[1200px] sm:w-[95%] flex flex-wrap justify-between w-full sm:mx-auto">
         <Copyright />
-        <BuiltWith />
         <Links />
+        <BuiltWith />
       </footer>
     </div>
   )
