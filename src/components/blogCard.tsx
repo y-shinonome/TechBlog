@@ -40,23 +40,33 @@ const BlogCard: NextPage<Props> = ({ post }) => {
 
   return (
     <section className="mb-14">
-      <h2 className="mb-2 text-lg font-bold">{post.title}</h2>
-      <div
-        className="mb-2 text-sm"
-        dangerouslySetInnerHTML={{
-          __html: `${post.description}`,
-        }}
-      />
+      <div className="hover-dark">
+        <Link href={`/posts/${post.id}`}>
+          <a>
+            <h2 className="mb-2 text-lg font-bold">{post.title}</h2>
+            <div
+              className="mb-2"
+              dangerouslySetInnerHTML={{
+                __html: `${post.description}`,
+              }}
+            />
+          </a>
+        </Link>
+      </div>
       <div className="flex">
         <div className="w-[50vw] h-[30vw] max-w-[280px] max-h-[170px] relative flex-shrink-0 mr-3">
-          <Image
-            src={post.heroImage.url}
-            alt={post.title}
-            layout="fill"
-            objectFit="cover"
-            blurDataURL={`${post.heroImage.url}?w=20&h=20`}
-            placeholder="blur"
-          />
+          <Link href={`/posts/${post.id}`}>
+            <a>
+              <Image
+                src={post.heroImage.url}
+                alt={post.title}
+                layout="fill"
+                objectFit="cover"
+                blurDataURL={`${post.heroImage.url}?w=20&h=20`}
+                placeholder="blur"
+              />
+            </a>
+          </Link>
         </div>
         <div className="flex flex-col justify-between">
           <div>

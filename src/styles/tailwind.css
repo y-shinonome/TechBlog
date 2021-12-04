@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hover-dark {
-  @apply hover:bg-commonBlack/20 active:bg-commonBlack/40 transition duration-300;
+  @apply hover:bg-commonBlack/10 active:bg-commonBlack/30 transition duration-300;
 }
 
 .text-link {
