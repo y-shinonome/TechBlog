@@ -39,13 +39,13 @@ const BlogCard: NextPage<Props> = ({ post }) => {
     .format('YYYY年MM月DD日')
 
   return (
-    <section className="mb-14">
+    <section className="mb-20">
       <div className="hover-dark">
         <Link href={`/posts/${post.id}`}>
           <a>
-            <h2 className="mb-2 text-lg font-bold">{post.title}</h2>
+            <h2 className="mb-3 text-lg font-bold">{post.title}</h2>
             <div
-              className="mb-2"
+              className="mb-3"
               dangerouslySetInnerHTML={{
                 __html: `${post.description}`,
               }}
@@ -72,7 +72,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
           <div>
             <ul className="flex flex-wrap mb-2">
               {post.categories.map((category, index) => (
-                <li key={index} className="mb-1 mr-1 text-xs">
+                <li key={index} className="mb-2 mr-3 text-xs">
                   <Link href={`/categories/${category.id}/1`}>
                     <a>
                       <Button className="py-[2px] px-1">{category.name}</Button>
