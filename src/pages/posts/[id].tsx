@@ -10,6 +10,7 @@ import { client } from '../../api/microCMS'
 import CustomLink from '../../components/customLink'
 import CustomImage from '../../components/customImage'
 import Pager from '../../components/pager'
+import Button from '../../components/button'
 
 type props = {
   source: MDXRemoteSerializeResult
@@ -43,47 +44,52 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
   const index = pages.findIndex((page) => page.id === post.id)
 
   return (
-    <>
-      <div className="h-[60vw] max-h-[600px] md:h-[50vw] relative mx-6 sm:mx-0">
+    <section className="px-3">
+      <h2 className="mb-10 text-4xl font-bold">{post.title}</h2>
+      <div className="flex flex-wrap mb-4 text-sm">
+        <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
+          {publishDate}に公開
+        </time>
+        {publishDate !== updatedDate && (
+          <time dateTime={post.updatedDate.toString()}>
+            {updatedDate}に更新
+          </time>
+        )}
+      </div>
+      <ul className="flex flex-wrap mb-6">
+        {post.categories.map((category, index) => (
+          <li key={index} className="mb-2 mr-2">
+            <Link href={`/posts/categories/${category.id}/1`}>
+              <a>
+                <Button className="py-[2px] px-1">{category.name}</Button>
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <div
+        className="mb-6"
+        dangerouslySetInnerHTML={{
+          __html: `${post.description}`,
+        }}
+      />
+      <div className="h-[60vw] relative mb-6 w-full">
         <Image
           src={post.heroImage.url}
           alt={post.title}
           blurDataURL={`${post.heroImage.url}?w=20&h=20`}
           placeholder="blur"
           layout="fill"
-          objectFit="contain"
+          objectFit="cover"
         />
       </div>
-      <section className="p-1 w-full">
-        <div className="mb-10 mx-6 sm:mx-0">
-          <div className="flex flex-wrap mt-5">
-            <time dateTime={post.publishedDate.toString()} className="mr-5">
-              {publishDate}に公開
-            </time>
-            {publishDate !== updatedDate && (
-              <time dateTime={post.updatedDate.toString()}>
-                {updatedDate}に更新
-              </time>
-            )}
-          </div>
-          <div className="flex mt-5">
-            <ul className="flex flex-wrap">
-              {post.categories.map((category, index) => (
-                <li key={index} className="m-1">
-                  <Link href={`/posts/categories/${category.id}/1`}>
-                    <a>{category.name}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="prose mt-5 max-w-none">
-            <MDXRemote {...source} components={components} />
-          </div>
-        </div>
-        <Pager pages={pages} index={index} />
-      </section>
-    </>
+
+      <div className="prose mb-12 max-w-none">
+        <MDXRemote {...source} components={components} />
+      </div>
+
+      <Pager pages={pages} index={index} className="mb-12" />
+    </section>
   )
 }
 

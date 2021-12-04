@@ -17,7 +17,7 @@ const CustomLink: React.FC<Props> = ({ href, ...otherProps }) => {
       ) : (
         <a href={href} target="_blank" rel="noopener noreferrer">
           {otherProps.children}
-          <FiExternalLink className="inline" />
+          <FiExternalLink className="inline ml-1" />
         </a>
       )}
     </>
