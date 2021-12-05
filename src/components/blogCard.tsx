@@ -45,7 +45,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
           <a>
             <h2 className="mb-3 text-lg font-bold">{post.title}</h2>
             <div
-              className="mb-3"
+              className="mb-3 text-sm"
               dangerouslySetInnerHTML={{
                 __html: `${post.description}`,
               }}
@@ -98,14 +98,16 @@ const BlogCard: NextPage<Props> = ({ post }) => {
               )}
             </div>
           </div>
-          <Link href={`/posts/${post.id}`}>
-            <a>
-              <Button className="px-1">
-                投稿を読む
-                <VscArrowRight className="ml-1" />
-              </Button>
-            </a>
-          </Link>
+          <div>
+            <Link href={`/posts/${post.id}`}>
+              <a>
+                <Button className="px-1">
+                  投稿を読む
+                  <VscArrowRight className="ml-1" />
+                </Button>
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
