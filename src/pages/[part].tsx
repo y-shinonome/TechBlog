@@ -2,7 +2,9 @@ import type { NextPage } from 'next'
 import { GetStaticProps } from 'next'
 import { client } from '../api/microCMS'
 import BlogCard from '../components/blogCard'
+import BlogCardWide from '../components/blogCardWide'
 import Pagination from '../components/pagination'
+import { useGetWindowWidth } from '../utils/client'
 
 type Props = {
   posts: post[]
@@ -16,11 +18,17 @@ const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
       <ul className="px-3">
-        {posts.map((post, index) => (
-          <li key={index}>
-            <BlogCard post={post} />
-          </li>
-        ))}
+        {useGetWindowWidth() < 640
+          ? posts.map((post, index) => (
+              <li key={index}>
+                <BlogCard post={post} />
+              </li>
+            ))
+          : posts.map((post, index) => (
+              <li key={index}>
+                <BlogCardWide post={post} />
+              </li>
+            ))}
       </ul>
       <Pagination
         totalCount={pageCount.totalCount}
