@@ -59,7 +59,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
       <ul className="flex flex-wrap mb-6">
         {post.categories.map((category, index) => (
           <li key={index} className="mb-2 mr-2">
-            <Link href={`/posts/categories/${category.id}/1`}>
+            <Link href={`/categories/${category.id}/1`}>
               <a>
                 <Button className="py-[2px] px-1">{category.name}</Button>
               </a>
