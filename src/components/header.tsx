@@ -32,16 +32,16 @@ const Header: React.FC = () => {
       >
         {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
       </button>
-      <div className="h-[50px] w- bg-commonBlack"></div>
+      <div className="h-[50px] w- bg-commonBlack/90"></div>
       <div
-        className="h-[15vw] max-h-[60px] sticky z-10 top-0 mb-10 bg-commonBlack"
+        className="h-[70px] top-[-6px] bg-commonBlack/90 backdrop-blur-[2px] sticky z-10 mb-10"
         style={{ clipPath: 'url(#headerClip)' }}
       >
         <svg>
           <clipPath id="headerClip" clipPathUnits="objectBoundingBox">
             <path
-              d="M 0.02338608,20.855404 C 13.016922,24.094407 26.508504,26.382441 52.929193,26.399852 141.67317,26.458333 156.53232,0 185.23171,-0.05846521 H 0.02338608 Z"
-              transform="scale(0.003779 0.037795)"
+              d="M 264.58333,0 H 0 c 0,0 0,139.14169 0,211.66667 0,32.57636 50.492142,60.5429 82.163264,52.91666 C 179.55566,241.13175 143.78897,50.138115 233.05916,4.683886 242.47298,-0.10940048 264.58333,7.9375 264.58333,7.9375 Z"
+              transform="scale(0.003779 0.003779)"
             />
           </clipPath>
         </svg>
