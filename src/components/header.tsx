@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { VscChromeClose } from 'react-icons/vsc'
 import SideBar from './sideBar'
+import { toggleScrollRock } from '../utils/scrollRock'
 
 export const sideBarContext = React.createContext(
   {} as {
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
 
   const toggleSideBar = () => {
     setIsOpen(!isOpen)
+    toggleScrollRock(isOpen)
   }
 
   return (

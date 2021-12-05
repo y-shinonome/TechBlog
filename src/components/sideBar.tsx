@@ -3,12 +3,14 @@ import { sideBarContext } from '../components/header'
 import Profile from '../components/profile'
 import Categories from '../components/categories'
 import Share from '../components/share'
+import { toggleScrollRock } from '../utils/scrollRock'
 
 const SideBar: React.FC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
 
   const toggleSideBar = () => {
     setIsOpen(!isOpen)
+    toggleScrollRock(isOpen)
   }
 
   return (
