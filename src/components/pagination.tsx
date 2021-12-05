@@ -20,7 +20,7 @@ const Pagination: React.FC<props> = ({
 
   return (
     <div className={`flex items-center justify-center text-xl ${cllassName}`}>
-      <Link href={`${frontPath}${currentPage - 1}`}>
+      <Link href={currentPage === 1 ? `/1` : `${frontPath}${currentPage - 1}`}>
         <a
           className={`hover-dark block mx-1 px-1 py-2 ${
             currentPage === 1 && 'text-commonBlack/30 pointer-events-none'
@@ -45,7 +45,13 @@ const Pagination: React.FC<props> = ({
           </li>
         ))}
       </ul>
-      <Link href={`${frontPath}${currentPage + 1}`}>
+      <Link
+        href={
+          currentPage === Math.ceil(totalCount / 5)
+            ? `/1`
+            : `${frontPath}${currentPage + 1}`
+        }
+      >
         <a
           className={`hover-dark block mx-1 px-1 py-2 ${
             currentPage === Math.ceil(totalCount / 5) &&
