@@ -16,7 +16,7 @@ const SideBar: React.FC = () => {
       clearScrollRock()
       setIsOpen(false)
     }
-  }, [])
+  }, [setIsOpen])
 
   return (
     <>
