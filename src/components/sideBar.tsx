@@ -1,8 +1,6 @@
 import { useContext, useEffect } from 'react'
 import { sideBarContext } from './Layout'
-import Profile from './profile'
-import Categories from './categories'
-import Share from './share'
+import Aside from './aside'
 import { toggleScrollRock, clearScrollRock } from '../utils/scrollRock'
 
 const SideBar: React.FC = () => {
@@ -28,15 +26,11 @@ const SideBar: React.FC = () => {
         } `}
         onClick={toggleSideBar}
       ></div>
-      <aside
+      <Aside
         className={`pt-20 h-[100vh] bg-commonWhite/80 fixed z-20 right-0 top-0 overflow-auto transform duration-300 ${
           isOpen ? 'w-[70%] px-3' : 'w-0'
         }`}
-      >
-        <Profile className="mb-6" />
-        <Categories className="mb-6" />
-        <Share />
-      </aside>
+      />
     </>
   )
 }

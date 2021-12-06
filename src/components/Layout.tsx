@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import Header from './header'
 import Footer from './Footer'
-import Profile from './profile'
-import Categories from './categories'
 import SideBar from './sideBar'
-import Share from './share'
+import Aside from './aside'
 import { useGetWindowWidth } from '../utils/client'
 
 type Props = {
@@ -30,11 +28,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <div className="max-w-[1100px] mx-auto px-3 md:flex md:px-6">
         <div className="md:mr-8">{children}</div>
         {useGetWindowWidth() >= 768 && (
-          <aside className="w-[25vw] max-w-[250px] flex-shrink-0">
-            <Profile className="mb-6" />
-            <Categories className="mb-6" />
-            <Share />
-          </aside>
+          <Aside className="w-[25vw] max-w-[250px] flex-shrink-0" />
         )}
       </div>
       <Footer />
