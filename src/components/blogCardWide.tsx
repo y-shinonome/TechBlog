@@ -41,8 +41,8 @@ const BlogCardWide: NextPage<Props> = ({ post }) => {
   return (
     <section className="mb-20">
       <div className="flex">
-        <div className="w-[35vw] flex-col flex-shrink-0">
-          <div className="h-[21vw] relative mb-2 mr-3">
+        <div className="w-[35vw] md:w-[25vw] md:max-w-[263px] flex-col flex-shrink-0">
+          <div className="h-[21vw] md:h-[15vw] md:max-h-[165px] relative mb-2 mr-3">
             <Link href={`/posts/${post.id}`}>
               <a>
                 <Image
