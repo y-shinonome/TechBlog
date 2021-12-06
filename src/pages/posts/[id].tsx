@@ -7,6 +7,7 @@ import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
 import { client } from '../../api/microCMS'
+import Meta from '../../components/meta'
 import CustomLink from '../../components/customLink'
 import CustomImage from '../../components/customImage'
 import Pager from '../../components/pager'
@@ -44,52 +45,57 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
   const index = pages.findIndex((page) => page.id === post.id)
 
   return (
-    <section>
-      <h2 className="mb-10 text-4xl font-bold">{post.title}</h2>
-      <div className="flex flex-wrap mb-4 text-sm">
-        <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
-          {publishDate}に公開
-        </time>
-        {publishDate !== updatedDate && (
-          <time dateTime={post.updatedDate.toString()}>
-            {updatedDate}に更新
-          </time>
-        )}
-      </div>
-      <ul className="flex flex-wrap mb-6">
-        {post.categories.map((category, index) => (
-          <li key={index} className="mb-2 mr-2">
-            <Link href={`/categories/${category.id}/1`}>
-              <a>
-                <Button className="py-[2px] px-1">{category.name}</Button>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div
-        className="mb-6"
-        dangerouslySetInnerHTML={{
-          __html: `${post.description}`,
-        }}
+    <>
+      <Meta
+        subTitle={post.title}
+        imageUrl={post.heroImage.url}
+        type="article"
       />
-      <div className="h-[60vw] md:h-[calc(60vw-20vw)] md:max-h-[440px] relative mb-6 w-full">
-        <Image
-          src={post.heroImage.url}
-          alt={post.title}
-          blurDataURL={`${post.heroImage.url}?w=20&h=20`}
-          placeholder="blur"
-          layout="fill"
-          objectFit="cover"
+      <section>
+        <h2 className="mb-10 text-4xl font-bold">{post.title}</h2>
+        <div className="flex flex-wrap mb-4 text-sm">
+          <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
+            {publishDate}に公開
+          </time>
+          {publishDate !== updatedDate && (
+            <time dateTime={post.updatedDate.toString()}>
+              {updatedDate}に更新
+            </time>
+          )}
+        </div>
+        <ul className="flex flex-wrap mb-6">
+          {post.categories.map((category, index) => (
+            <li key={index} className="mb-2 mr-2">
+              <Link href={`/categories/${category.id}/1`}>
+                <a>
+                  <Button className="py-[2px] px-1">{category.name}</Button>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div
+          className="mb-6"
+          dangerouslySetInnerHTML={{
+            __html: `${post.description}`,
+          }}
         />
-      </div>
-
-      <div className="prose mb-12 max-w-none">
-        <MDXRemote {...source} components={components} />
-      </div>
-
-      <Pager pages={pages} index={index} className="mb-12" />
-    </section>
+        <div className="h-[60vw] md:h-[calc(60vw-20vw)] md:max-h-[440px] relative mb-6 w-full">
+          <Image
+            src={post.heroImage.url}
+            alt={post.title}
+            blurDataURL={`${post.heroImage.url}?w=20&h=20`}
+            placeholder="blur"
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+        <div className="prose mb-12 max-w-none">
+          <MDXRemote {...source} components={components} />
+        </div>
+        <Pager pages={pages} index={index} className="mb-12" />
+      </section>
+    </>
   )
 }
 
