@@ -1,19 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
+import { sideBarContext } from './Layout'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { VscChromeClose } from 'react-icons/vsc'
-import SideBar from './sideBar'
 import { toggleScrollRock } from '../utils/scrollRock'
 
-export const sideBarContext = React.createContext(
-  {} as {
-    isOpen: boolean
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-  }
-)
-
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen, setIsOpen } = useContext(sideBarContext)
 
   const toggleSideBar = () => {
     setIsOpen(!isOpen)
@@ -48,9 +41,6 @@ const Header: React.FC = () => {
           </clipPath>
         </svg>
       </div>
-      <sideBarContext.Provider value={{ isOpen, setIsOpen }}>
-        <SideBar />
-      </sideBarContext.Provider>
     </>
   )
 }

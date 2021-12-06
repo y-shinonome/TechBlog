@@ -1,8 +1,8 @@
 import { useContext } from 'react'
-import { sideBarContext } from '../components/header'
-import Profile from '../components/profile'
-import Categories from '../components/categories'
-import Share from '../components/share'
+import { sideBarContext } from './Layout'
+import Profile from './profile'
+import Categories from './categories'
+import Share from './share'
 import { toggleScrollRock } from '../utils/scrollRock'
 
 const SideBar: React.FC = () => {
@@ -21,7 +21,7 @@ const SideBar: React.FC = () => {
         } `}
         onClick={toggleSideBar}
       ></div>
-      <nav
+      <aside
         className={`pt-20 h-[100vh] bg-commonWhite/80 fixed z-20 right-0 top-0 overflow-auto transform duration-300 ${
           isOpen ? 'w-[70%] px-3' : 'w-0'
         }`}
@@ -29,7 +29,7 @@ const SideBar: React.FC = () => {
         <Profile className="mb-6" />
         <Categories className="mb-6" />
         <Share />
-      </nav>
+      </aside>
     </>
   )
 }

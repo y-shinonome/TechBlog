@@ -1,18 +1,32 @@
+import React, { useState } from 'react'
 import Header from './header'
 import Footer from './Footer'
-import Profile from '../components/profile'
-import Categories from '../components/categories'
-import Share from '../components/share'
+import Profile from './profile'
+import Categories from './categories'
+import SideBar from './sideBar'
+import Share from './share'
 import { useGetWindowWidth } from '../utils/client'
 
 type Props = {
   children: React.ReactNode
 }
 
+export const sideBarContext = React.createContext(
+  {} as {
+    isOpen: boolean
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  }
+)
+
 const Layout: React.FC<Props> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <>
-      <Header />
+      <sideBarContext.Provider value={{ isOpen, setIsOpen }}>
+        <Header />
+        <SideBar />
+      </sideBarContext.Provider>
       <div className="max-w-[1100px] mx-auto md:flex">
         <div>{children}</div>
         {useGetWindowWidth() >= 768 && (
