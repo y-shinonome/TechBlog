@@ -16,9 +16,9 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <h1 className="fixed z-20 ml-3 my-1 text-commonWhite text-lg font-bold">
+      <h1 className="fixed z-20 ml-3 my-1 text-commonWhite text-2xl font-bold md:ml-6">
         <Link href="/1">
-          <a>techblog.shi-nono.me</a>
+          <a>TECH BLOG</a>
         </Link>
       </h1>
       {useGetWindowWidth() < 768 && (
