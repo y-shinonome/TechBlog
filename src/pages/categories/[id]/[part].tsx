@@ -31,7 +31,7 @@ type ApiContainer = {
 const CategoriesSplit: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
-      <ul className="px-3">
+      <ul>
         {useGetWindowWidth() < 640
           ? posts.map((post, index) => (
               <li key={index}>

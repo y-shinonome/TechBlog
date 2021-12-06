@@ -44,7 +44,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
   const index = pages.findIndex((page) => page.id === post.id)
 
   return (
-    <section className="px-3">
+    <section>
       <h2 className="mb-10 text-4xl font-bold">{post.title}</h2>
       <div className="flex flex-wrap mb-4 text-sm">
         <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
@@ -73,7 +73,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
           __html: `${post.description}`,
         }}
       />
-      <div className="h-[60vw] relative mb-6 w-full">
+      <div className="h-[60vw] md:h-[calc(60vw-20vw)] md:max-h-[440px] relative mb-6 w-full">
         <Image
           src={post.heroImage.url}
           alt={post.title}

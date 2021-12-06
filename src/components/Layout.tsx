@@ -27,10 +27,10 @@ const Layout: React.FC<Props> = ({ children }) => {
         <Header />
         {useGetWindowWidth() < 768 && <SideBar />}
       </sideBarContext.Provider>
-      <div className="max-w-[1100px] mx-auto md:flex">
-        <div>{children}</div>
+      <div className="max-w-[1100px] mx-auto px-3 md:flex md:px-6">
+        <div className="md:mr-8">{children}</div>
         {useGetWindowWidth() >= 768 && (
-          <aside className="w-[250px] flex-shrink-0">
+          <aside className="w-[25vw] max-w-[250px] flex-shrink-0">
             <Profile className="mb-6" />
             <Categories className="mb-6" />
             <Share />
