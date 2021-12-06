@@ -4,6 +4,7 @@ import { sideBarContext } from './Layout'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { VscChromeClose } from 'react-icons/vsc'
 import { toggleScrollRock } from '../utils/scrollRock'
+import { useGetWindowWidth } from '../utils/client'
 
 const Header: React.FC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
@@ -20,13 +21,15 @@ const Header: React.FC = () => {
           <a>techblog.shi-nono.me</a>
         </Link>
       </h1>
-      <button
-        className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
-        aria-label="メニューボタン"
-        onClick={toggleSideBar}
-      >
-        {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
-      </button>
+      {useGetWindowWidth() < 768 && (
+        <button
+          className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
+          aria-label="メニューボタン"
+          onClick={toggleSideBar}
+        >
+          {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
+        </button>
+      )}
       <div className="h-[50px] w- bg-commonBlack/90"></div>
       <div
         className="h-[70px] top-[-6px] bg-commonBlack/90 backdrop-blur-[2px] sticky z-10 mb-10"

@@ -7,4 +7,6 @@ export const toggleScrollRock = (isRock:boolean) => {
     }
   }
 
-export const clearScrollRock = clearAllBodyScrollLocks()
+export const clearScrollRock = () => {
+  clearAllBodyScrollLocks()
+}

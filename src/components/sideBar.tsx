@@ -1,9 +1,9 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { sideBarContext } from './Layout'
 import Profile from './profile'
 import Categories from './categories'
 import Share from './share'
-import { toggleScrollRock } from '../utils/scrollRock'
+import { toggleScrollRock, clearScrollRock } from '../utils/scrollRock'
 
 const SideBar: React.FC = () => {
   const { isOpen, setIsOpen } = useContext(sideBarContext)
@@ -12,6 +12,13 @@ const SideBar: React.FC = () => {
     setIsOpen(!isOpen)
     toggleScrollRock(isOpen)
   }
+
+  useEffect(() => {
+    return () => {
+      clearScrollRock()
+      setIsOpen(false)
+    }
+  }, [])
 
   return (
     <>

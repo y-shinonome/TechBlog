@@ -25,7 +25,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     <>
       <sideBarContext.Provider value={{ isOpen, setIsOpen }}>
         <Header />
-        <SideBar />
+        {useGetWindowWidth() < 768 && <SideBar />}
       </sideBarContext.Provider>
       <div className="max-w-[1100px] mx-auto md:flex">
         <div>{children}</div>
