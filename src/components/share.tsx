@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import SnsShareButton from '../components/snsShareButton'
 import {
-  EmailShareButton,
   TwitterShareButton,
   FacebookShareButton,
   LineShareButton,
   HatenaShareButton,
+  LinkedinShareButton,
   PinterestShareButton,
+  PocketShareButton,
+  EmailShareButton,
 } from 'react-share'
 import { IoIosMail } from 'react-icons/io'
-import { FaTwitter } from 'react-icons/fa'
+import { FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { AiFillFacebook } from 'react-icons/ai'
-import { SiLine, SiHatenabookmark, SiPinterest } from 'react-icons/si'
+import { SiLine, SiHatenabookmark, SiPinterest, SiPocket } from 'react-icons/si'
 
 type Props = {
   className?: string
@@ -38,11 +40,7 @@ const Share: React.FC<Props> = ({ className }) => {
   return (
     <article className={className}>
       <h2 className="mb-1 text-lg font-bold">Share</h2>
-      <EmailShareButton url={pageUrl}>
-        <SnsShareButton className="hover:bg-[#AB99BA] hover:border-[#AB99BA]">
-          <IoIosMail />
-        </SnsShareButton>
-      </EmailShareButton>
+
       <TwitterShareButton url={pageUrl}>
         <SnsShareButton className="hover:bg-[#1DA1F2] hover:border-[#1DA1F2]">
           <FaTwitter />
@@ -63,11 +61,26 @@ const Share: React.FC<Props> = ({ className }) => {
           <SiHatenabookmark />
         </SnsShareButton>
       </HatenaShareButton>
+      <LinkedinShareButton url={pageUrl}>
+        <SnsShareButton className="hover:bg-[#0a66c2] hover:border-[#0a66c2]">
+          <FaLinkedin />
+        </SnsShareButton>
+      </LinkedinShareButton>
       <PinterestShareButton url={pageUrl} media={mediaUrl}>
         <SnsShareButton className="hover:bg-[#E60023] hover:border-[#E60023]">
           <SiPinterest />
         </SnsShareButton>
       </PinterestShareButton>
+      <PocketShareButton url={pageUrl}>
+        <SnsShareButton className="hover:bg-[#ee4056] hover:border-[#ee4056]">
+          <SiPocket />
+        </SnsShareButton>
+      </PocketShareButton>
+      <EmailShareButton url={pageUrl}>
+        <SnsShareButton className="hover:bg-[#AB99BA] hover:border-[#AB99BA]">
+          <IoIosMail />
+        </SnsShareButton>
+      </EmailShareButton>
     </article>
   )
 }
