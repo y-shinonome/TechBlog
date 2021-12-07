@@ -4,7 +4,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ja-JP">
-        <Head />
+        <Head prefix="article: https://ogp.me/ns/article# website: https://ogp.me/ns/article#" />
         <body className="text-commonBlack bg-commonWhite">
           <Main /> 
           <NextScript />
