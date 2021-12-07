@@ -12,7 +12,7 @@ const Profile: React.FC<Props> = ({ className }) => {
       <div className="flex items-center mb-2">
         <div className="h-[100px] w-[100px] relative">
           <Image
-            src="/images/sample.png"
+            src="/images/cube.png"
             alt="sample"
             layout="fill"
             objectFit="cover"
@@ -21,8 +21,11 @@ const Profile: React.FC<Props> = ({ className }) => {
         <div className="ml-4 text-lg font-bold">しののめ</div>
       </div>
       <div className="mb-2">
-        SampleText
-        山路を登りながら、こう考えた。智に働けば角が立つ。情に棹させば流される。意地を通せば窮屈だ。とかくに人の世は住みにくい。住みにくさが高じると、安い所へ引き越したくなる。
+        <p>
+          職業プログラマではないけど趣味でエンジニアリングをしています。
+          <br />
+          モノづくり好きが高じてJamstack構成の爆速ブログを作ってみました。
+        </p>
       </div>
       <ul className="flex">
         <li className="inline-flex items-center mr-3">
