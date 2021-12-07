@@ -1,4 +1,3 @@
-import React from 'react'
 import Profile from './profile'
 import Categories from './categories'
 import Share from './share'
@@ -6,13 +5,6 @@ import Share from './share'
 type Props = {
   className: string
 }
-
-export const sideBarContext = React.createContext(
-  {} as {
-    isOpen: boolean
-    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-  }
-)
 
 const Aside: React.FC<Props> = ({ className }) => {
   return (
