@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ExternalLink from './externalLink'
 import { FaGithub } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
 
@@ -29,12 +30,22 @@ const Profile: React.FC<Props> = ({ className }) => {
       </div>
       <ul className="flex">
         <li className="inline-flex items-center mr-3">
-          <FaTwitter className="mr-1" />
-          Twitter
+          <FaTwitter className="mr-1 text-lg" />
+          <ExternalLink
+            href="https://twitter.com/snnnnnnnnnnnm"
+            className="my-1 text-sm"
+          >
+            Twitter
+          </ExternalLink>
         </li>
         <li className="inline-flex items-center">
-          <FaGithub className="mr-1" />
-          GitHub
+          <FaGithub className="mr-1 text-lg" />
+          <ExternalLink
+            href="https://github.com/y-shinonome"
+            className="my-1 text-sm"
+          >
+            GitHub
+          </ExternalLink>
         </li>
       </ul>
     </article>

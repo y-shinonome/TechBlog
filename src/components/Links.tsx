@@ -1,6 +1,6 @@
 import { FaTwitter } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
-import ExternalLink from '../components/externalLink'
+import ExternalLink from './externalLink'
 
 const Links: React.FC = () => {
   return (
@@ -10,7 +10,10 @@ const Links: React.FC = () => {
         <li>
           <div className="inline-flex items-center">
             <FaTwitter className="mr-1 text-lg" />
-            <ExternalLink href="https://twitter.com" className="my-1 text-sm">
+            <ExternalLink
+              href="https://twitter.com/snnnnnnnnnnnm"
+              className="my-1 text-sm"
+            >
               Twitter
             </ExternalLink>
           </div>
