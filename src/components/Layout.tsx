@@ -26,7 +26,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         {useGetWindowWidth() < 768 && <SideBar />}
       </sideBarContext.Provider>
       <div className="max-w-[1100px] mx-auto px-3 md:flex md:px-6">
-        <div className="md:mr-8">{children}</div>
+        <div className="md:mr-8 md:w-full">{children}</div>
         {useGetWindowWidth() >= 768 && (
           <Aside className="w-[25vw] max-w-[250px] flex-shrink-0" />
         )}
