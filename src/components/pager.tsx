@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Button from '../components/button'
+import Button from './button'
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
 
 type props = {

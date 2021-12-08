@@ -1,4 +1,4 @@
-import Button from '../components/button'
+import Button from './button'
 import Link from 'next/link'
 
 type Props = {

@@ -27,6 +27,5 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "utils/mdxUtils.js"
   ]
 }

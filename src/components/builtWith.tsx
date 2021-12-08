@@ -1,4 +1,4 @@
-import ExternalLink from '../components/externalLink'
+import ExternalLink from './externalLink'
 
 const BuiltWith: React.FC = () => {
   const architectures = [

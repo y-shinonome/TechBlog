@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import SnsShareButton from '../components/snsShareButton'
+import SnsShareButton from './snsShareButton'
 import {
   TwitterShareButton,
   FacebookShareButton,

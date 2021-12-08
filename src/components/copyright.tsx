@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import ExternalLink from '../components/externalLink'
+import ExternalLink from './externalLink'
 
 const Copyright: React.FC = () => {
   const currentYear = dayjs().year()
