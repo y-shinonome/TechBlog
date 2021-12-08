@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Meta from '../components/meta'
-import Button from '../components/button'
 
 const Contact: NextPage = () => {
   return (
@@ -55,7 +54,12 @@ const Contact: NextPage = () => {
               placeholder="お問い合わせ内容を入力してください"
             ></textarea>
           </div>
-          <Button className="ml-28 px-10 py-1 text-lg">送信する</Button>
+          <button
+            type="submit"
+            className="button-common ml-28 px-10 py-1 text-lg"
+          >
+            送信する
+          </button>
         </article>
       </div>
     </>
