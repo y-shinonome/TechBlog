@@ -11,7 +11,7 @@ const Others: React.FC = () => {
           </Link>
         </li>
         <li>
-          <Link href="/1">
+          <Link href="/contact">
             <a className="text-link my-1 text-sm">お問い合わせ</a>
           </Link>
         </li>
