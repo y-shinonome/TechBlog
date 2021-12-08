@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { GetStaticProps } from 'next'
-import { client } from '../api/microCMS'
+import { client } from '../utils/microCMS'
 import Meta from '../components/meta'
 import BlogCard from '../components/blogCard'
 import BlogCardWide from '../components/blogCardWide'
