@@ -7,5 +7,9 @@
 }
 
 .text-link {
-  @apply text-[#1111EE] hover:text-[#000098] underline;
+  @apply hover:text-[#1111EE] underline;
+}
+
+.button-common {
+  @apply inline-flex items-center hover:text-commonWhite hover:bg-commonBlack active:bg-opacity-40 border border-commonBlack active:border-opacity-0 transition;
 }
