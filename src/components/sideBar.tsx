@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import { sideBarContext } from './Layout'
+import { sideBarContext } from './layout'
 import Aside from './aside'
 import { toggleScrollRock, clearScrollRock } from '../utils/scrollRock'
 

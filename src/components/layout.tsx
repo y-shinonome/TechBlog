@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Header from './header'
-import Footer from './Footer'
+import Footer from './footer'
 import SideBar from './sideBar'
 import Aside from './aside'
 import { useGetWindowWidth } from '../utils/client'

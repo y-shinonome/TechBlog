@@ -1,6 +1,6 @@
 import BuiltWith from './builtWith'
 import Copyright from './copyright'
-import Links from './Links'
+import Links from './links'
 import Others from './others'
 
 const Footer: React.FC = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import { sideBarContext } from './Layout'
+import { sideBarContext } from './layout'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { VscChromeClose } from 'react-icons/vsc'
 import { toggleScrollRock } from '../utils/scrollRock'
