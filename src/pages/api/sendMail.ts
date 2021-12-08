@@ -1,9 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
 import sgMail from '@sendgrid/mail'
 
 sgMail.setApiKey('SG.xxx')
 
-const sendMail = async (req: any, res: any) => {
-  if (req.method === 'POST') {
+const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
+
     const msg = {
       to: req.body.email,
       from: 'support@example.com',
@@ -13,18 +14,13 @@ const sendMail = async (req: any, res: any) => {
       html:
         'お問合せを受け付けました。回答をお待ちください。' + req.body.message,
     }
-
+    
     try {
       await sgMail.send(msg)
+      res.status(200).json({ message: '送信に成功しました' })
     } catch (error: any) {
-      console.error(error)
-      if (error.response) {
-        console.error(error.response.body)
-      }
+      res.status(500).json({ message: '送信に失敗しました' })
     }
-  }
-
-  res.status(200)
 }
 
 export default sendMail

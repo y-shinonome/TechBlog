@@ -6,8 +6,9 @@ const Contact: NextPage = () => {
   const [fullname, setFullname] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [result, setResult] = useState(0)
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const res = await fetch('/api/sendMail', {
@@ -22,12 +23,7 @@ const Contact: NextPage = () => {
       method: 'POST',
     })
 
-    const { error } = await res.json()
-    if (error) {
-      console.log(error)
-      return
-    }
-    console.log(fullname, email, message)
+    setResult(res.status)
   }
 
   return (
@@ -98,6 +94,7 @@ const Contact: NextPage = () => {
           >
             送信する
           </button>
+          <p>{result}</p>
         </form>
       </article>
     </>
