@@ -22,6 +22,7 @@ const Pagination: React.FC<props> = ({
     <div className={`flex items-center justify-center text-xl ${cllassName}`}>
       <Link href={currentPage === 1 ? `/1` : `${frontPath}${currentPage - 1}`}>
         <a
+          aria-label="次のページ"
           className={`hover-dark block mx-1 px-1 py-2 ${
             currentPage === 1 && 'text-commonBlack/30 pointer-events-none'
           } `}
@@ -29,6 +30,7 @@ const Pagination: React.FC<props> = ({
           <IoIosArrowBack />
         </a>
       </Link>
+
       <ul className="flex">
         {range(1, Math.ceil(totalCount / 5)).map((number, index) => (
           <li key={index}>
@@ -45,6 +47,7 @@ const Pagination: React.FC<props> = ({
           </li>
         ))}
       </ul>
+
       <Link
         href={
           currentPage === Math.ceil(totalCount / 5)
@@ -53,6 +56,7 @@ const Pagination: React.FC<props> = ({
         }
       >
         <a
+          aria-label="次のページ"
           className={`hover-dark block mx-1 px-1 py-2 ${
             currentPage === Math.ceil(totalCount / 5) &&
             'text-commonBlack/30 pointer-events-none'
