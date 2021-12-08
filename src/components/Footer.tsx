@@ -1,6 +1,7 @@
 import BuiltWith from './builtWith'
 import Copyright from './copyright'
 import Links from './Links'
+import Others from './Others'
 
 const Footer: React.FC = () => {
   return (
@@ -8,6 +9,7 @@ const Footer: React.FC = () => {
       <footer className="max-w-[1200px] sm:w-[95%] flex flex-wrap justify-between w-full sm:mx-auto">
         <Copyright />
         <Links />
+        <Others />
         <BuiltWith />
       </footer>
     </div>
