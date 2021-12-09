@@ -17,9 +17,16 @@ const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
     
     try {
       await sgMail.send(msg)
-      res.status(200).json({ message: '送信に成功しました' })
+      
+      res.status(200).json({
+        caption: '送信成功',
+        className: 'bg-[#DEDEFF] pointer-events-none',
+      })
     } catch (error: any) {
-      res.status(500).json({ message: '送信に失敗しました' })
+      res.status(500).json({
+        caption: '送信失敗',
+        className: 'bg-[#FFDEDE] pointer-events-none',
+      })
     }
 }
 

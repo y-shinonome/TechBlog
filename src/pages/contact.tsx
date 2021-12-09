@@ -2,14 +2,26 @@ import type { NextPage } from 'next'
 import { useState } from 'react'
 import Meta from '../components/meta'
 
+type Result = {
+  caption: string
+  className: string
+}
+
 const Contact: NextPage = () => {
   const [fullname, setFullname] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const [result, setResult] = useState(0)
+  const [result, setResult] = useState<Result>({
+    caption: '送信する',
+    className: 'button-common',
+  })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setResult({
+      caption: '送信中',
+      className: 'button-common pointer-events-none',
+    })
 
     const res = await fetch('/api/sendMail', {
       body: JSON.stringify({
@@ -23,7 +35,7 @@ const Contact: NextPage = () => {
       method: 'POST',
     })
 
-    setResult(res.status)
+    setResult(await res.json())
   }
 
   return (
@@ -89,12 +101,10 @@ const Contact: NextPage = () => {
             ></textarea>
           </div>
           <button
-            type="submit"
-            className="button-common ml-28 px-10 py-1 text-lg"
+            className={`ml-28 px-10 py-1 text-lg transition ${result.className}`}
           >
-            送信する
+            {result.caption}
           </button>
-          <p>{result}</p>
         </form>
       </article>
     </>
