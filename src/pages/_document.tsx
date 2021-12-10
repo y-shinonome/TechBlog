@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="ja-JP">
         <Head prefix="article: https://ogp.me/ns/article# website: https://ogp.me/ns/article#" />
         <body className="text-commonBlack bg-commonWhite">
-          <Main /> 
+          <Main />
           <NextScript />
         </body>
       </Html>
