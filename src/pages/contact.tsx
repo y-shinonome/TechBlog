@@ -18,6 +18,7 @@ const Contact: NextPage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+
     setResult({
       caption: '送信中',
       className: 'button-common pointer-events-none',

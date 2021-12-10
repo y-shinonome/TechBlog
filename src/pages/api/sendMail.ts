@@ -1,23 +1,26 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import sgMail from '@sendgrid/mail'
 
-sgMail.setApiKey('SG.xxx')
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const msg = {
       to: req.body.email,
-      from: 'support@example.com',
-      subject: 'お問合せありがとうございました。',
-      text:
-        'お問合せを受け付けました。回答をお待ちください。' + req.body.message,
-      html:
-        'お問合せを受け付けました。回答をお待ちください。' + req.body.message,
+      from: {
+        name: 'TECHBLOG | 問合わせ受付完了メール',
+        email: process.env.SENDGRID_FROM_EMAIL,
+      },
+      templateId: process.env.SENDGRID_TEMPLATE_ID,
+      dynamicTemplateData: {
+        name: req.body.fullname,
+        subject:'お問合せありがとうございます。',
+        message: req.body.message,
+      },
     }
-    
+
     try {
       await sgMail.send(msg)
-      
       res.status(200).json({
         caption: '送信成功',
         className: 'bg-[#DEDEFF] pointer-events-none',
