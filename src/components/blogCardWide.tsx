@@ -49,7 +49,7 @@ const BlogCardWide: NextPage<Props> = ({ post }) => {
                   src={post.heroImage.url}
                   alt={post.title}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                   blurDataURL={`${post.heroImage.url}?w=20&h=20`}
                   placeholder="blur"
                 />
