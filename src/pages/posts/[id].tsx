@@ -80,14 +80,14 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             __html: `${post.description}`,
           }}
         />
-        <div className="h-[60vw] md:h-[calc(60vw-20vw)] md:max-h-[440px] relative mb-6 w-full">
+        <div className="h-[60vw] md:h-[calc(60vw-18vw)] md:max-h-[495px] relative mb-6 w-full">
           <Image
             src={post.heroImage.url}
             alt={post.title}
             blurDataURL={`${post.heroImage.url}?w=20&h=20`}
             placeholder="blur"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
           />
         </div>
         <div className="prose mb-12 max-w-none">

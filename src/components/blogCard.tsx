@@ -54,14 +54,14 @@ const BlogCard: NextPage<Props> = ({ post }) => {
         </Link>
       </div>
       <div className="flex">
-        <div className="w-[50vw] h-[30vw] max-w-[280px] max-h-[170px] relative flex-shrink-0 mr-3">
+        <div className="w-[50vw] h-[31vw] max-w-[280px] max-h-[170px] relative flex-shrink-0 mr-3">
           <Link href={`/posts/${post.id}`}>
             <a>
               <Image
                 src={post.heroImage.url}
                 alt={post.title}
                 layout="fill"
-                objectFit="cover"
+                objectFit="contain"
                 blurDataURL={`${post.heroImage.url}?w=20&h=20`}
                 placeholder="blur"
               />
