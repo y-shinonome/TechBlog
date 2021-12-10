@@ -4,7 +4,7 @@ import ExternalLink from './externalLink'
 
 const Links: React.FC = () => {
   return (
-    <article className="mr-[10vw] mt-3">
+    <article className="mr-[10vw] mb-6 mt-3">
       <h2 className="mb-3 text-lg font-medium">Links</h2>
       <ul>
         <li>

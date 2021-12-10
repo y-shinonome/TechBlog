@@ -14,7 +14,7 @@ const BuiltWith: React.FC = () => {
     },
   ]
   return (
-    <article className="mb-6 mr-10 mt-3">
+    <article className="mr-[10vw] mb-6 mt-3">
       <h2 className="mb-3 text-lg font-medium">Built with</h2>
       <ul>
         {architectures.map((architecture, index) => (

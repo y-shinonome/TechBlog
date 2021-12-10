@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Others: React.FC = () => {
   return (
-    <article className="mr-[10vw] mt-3">
+    <article className="mr-[10vw] mb-6 mt-3">
       <h2 className="mb-3 text-lg font-medium">Others</h2>
       <ul>
         <li>

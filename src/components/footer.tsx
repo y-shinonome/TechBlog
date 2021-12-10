@@ -3,10 +3,14 @@ import Copyright from './copyright'
 import Links from './links'
 import Others from './others'
 
-const Footer: React.FC = () => {
+type props = {
+  className?: string
+}
+
+const Footer: React.FC<props> = ({ className }) => {
   return (
-    <div className="border-t-[1px] border-commonBlack/20 px-3">
-      <footer className="max-w-[1200px] sm:w-[95%] flex flex-wrap justify-between w-full sm:mx-auto">
+    <div className={className}>
+      <footer className="flex flex-wrap justify-between w-full">
         <Copyright />
         <Links />
         <Others />
