@@ -29,10 +29,17 @@ type ApiContainer = {
   totalCount: number
 }
 
-const CategoriesSplit: NextPage<Props> = ({ posts, pageCount }) => {
+const CategoriesSplit: NextPage<Props> = ({
+  posts,
+  pageCount,
+  categoryName,
+}) => {
   return (
     <>
       <Meta />
+      <h2 className="text-commonBlack/60 mb-12 font-bold">
+        {categoryName}の投稿一覧
+      </h2>
       <ul>
         {useGetWindowWidth() < 640
           ? posts.map((post, index) => (

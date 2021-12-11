@@ -43,7 +43,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
       <div className="hover-dark">
         <Link href={`/posts/${post.id}`}>
           <a>
-            <h2 className="mb-3 text-lg font-bold">{post.title}</h2>
+            <h3 className="mb-3 text-lg font-bold">{post.title}</h3>
             <div
               className="mb-3 text-sm"
               dangerouslySetInnerHTML={{

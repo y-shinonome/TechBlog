@@ -19,6 +19,7 @@ const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
       <Meta />
+      <h2 className="text-commonBlack/60 mb-12 font-bold">すべての投稿一覧</h2>
       <ul>
         {useGetWindowWidth() < 640
           ? posts.map((post, index) => (
