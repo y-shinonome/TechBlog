@@ -16,11 +16,13 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <h1 className="fixed z-20 ml-3 my-1 text-commonWhite text-2xl font-bold md:ml-6">
-        <Link href="/1">
-          <a>TECH BLOG</a>
-        </Link>
-      </h1>
+      <div className="fixed z-20 flex justify-center w-full">
+        <h1 className="max-w-[1100px] my-1 px-3 w-full text-commonWhite text-2xl font-bold md:px-6">
+          <Link href="/1">
+            <a>TECH BLOG</a>
+          </Link>
+        </h1>
+      </div>
       {useGetWindowWidth() < 768 && (
         <button
           className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
