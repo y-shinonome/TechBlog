@@ -20,14 +20,14 @@ const CustomImg: React.FC<Props> = ({ src, width, height, alt }) => {
           height={height}
         />
       ) : (
-        <div className="h-[60vw] relative w-full">
+        <div className="h-[60vw] max-h-[462px] md:h-[calc(60vw-18vw)] relative w-full">
           <Image
             src={src}
             alt={alt}
             blurDataURL={`${src}?w=20&h=20`}
             placeholder="blur"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
           />
         </div>
       )}
