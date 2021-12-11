@@ -39,3 +39,24 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 * update：機能修正
 * move: ファイル移動
 * remove：ファイル削除
+
+## lighthouseスコア
+![lighthouse_score](https://user-images.githubusercontent.com/82584330/145669452-94d1ddf4-8fc4-4233-a446-64ccc457ac3b.png)
+
+## アーキテクチャ
+### メイン言語
+* TypeScript
+### UIフレームワーク
+* React
+### 静的サイトジェネレータ
+* Next.js
+### ヘッドレスCMS(コンテンツ管理)
+* microCMS
+### ホスティングサービス
+* Vercel
+### CSSフレームワーク
+* TailWindCSS
+### バックエンド
+* Node.js (Vercelにサーバーレス関数として)
+### データベース
+* Cloud Firestore
