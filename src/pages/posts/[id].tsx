@@ -12,6 +12,7 @@ import CustomLink from '../../components/customLink'
 import CustomImage from '../../components/customImage'
 import Pager from '../../components/pager'
 import Button from '../../components/button'
+import CodeBlock from '../../components/codeBlock'
 
 type props = {
   source: MDXRemoteSerializeResult
@@ -29,6 +30,7 @@ type params = {
 const components = {
   a: CustomLink,
   image: CustomImage,
+  code: CodeBlock,
 }
 
 dayjs.extend(timezone)
