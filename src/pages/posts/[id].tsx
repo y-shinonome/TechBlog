@@ -12,6 +12,7 @@ import CustomLink from '../../components/customLink'
 import CustomImage from '../../components/customImage'
 import Pager from '../../components/pager'
 import Button from '../../components/button'
+import CodeBlock from '../../components/codeBlock'
 
 type props = {
   source: MDXRemoteSerializeResult
@@ -29,6 +30,7 @@ type params = {
 const components = {
   a: CustomLink,
   image: CustomImage,
+  code: CodeBlock,
 }
 
 dayjs.extend(timezone)
@@ -52,7 +54,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
         type="article"
       />
       <section>
-        <h2 className="mb-10 text-4xl font-bold">{post.title}</h2>
+        <h1 className="mb-10 text-4xl font-bold">{post.title}</h1>
         <div className="flex flex-wrap mb-4 text-sm">
           <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
             {publishDate}に公開
@@ -90,7 +92,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             objectFit="contain"
           />
         </div>
-        <div className="prose mb-12 max-w-none">
+        <div className="prose prose-custom prose-code:bg-commonBlack/5 prose-h2:text-commonBlack/80 prose-h2:text-3xl prose-h3:border-b prose-h3:border-commonBlack/50 prose-em:not-italic prose-em:bg-commonBlack/5 prose-em:px-1 max-w-none mb-12">
           <MDXRemote {...source} components={components} />
         </div>
         <Pager pages={pages} index={index} className="mb-12" />
