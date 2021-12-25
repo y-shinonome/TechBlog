@@ -92,7 +92,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             objectFit="contain"
           />
         </div>
-        <div className="prose prose-custom prose-code:bg-commonBlack/5 prose-h2:pb-1 prose-h2:border-b-2 prose-h2:border-commonBlack/40 prose-em:not-italic prose-em:bg-commonBlack/5 prose-em:px-1 max-w-none mb-12">
+        <div className="prose prose-custom prose-code:bg-commonBlack/5 prose-h2:pb-1 prose-h2:border-b-2 prose-h2:border-commonBlack/40 prose-h3:underline prose-h3:decoration-commonBlack/40 prose-h3:decoration-dotted prose-h3:underline-offset-4 prose-em:not-italic prose-em:bg-commonBlack/5 prose-em:px-1 max-w-none mb-12">
           <MDXRemote {...source} components={components} />
         </div>
         <Pager pages={pages} index={index} className="mb-12" />

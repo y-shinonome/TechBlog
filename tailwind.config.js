@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}', './public/**/*.html'],
+  content: ['./src/components/**/*.{html,tsx}', './src/pages/**/*.{html,tsx}'],
   darkMode: 'media',
   theme: {
     colors: {
@@ -47,9 +47,6 @@ module.exports = {
         },
       }),
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/typography')],
 }
