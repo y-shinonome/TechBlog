@@ -15,6 +15,11 @@ const Others: React.FC = () => {
             <a className="text-link my-1 text-sm">お問い合わせ</a>
           </Link>
         </li>
+        <li>
+          <Link href="/thermohygrometer">
+            <a className="text-link my-1 text-sm">温湿度計</a>
+          </Link>
+        </li>
       </ul>
     </article>
   )
