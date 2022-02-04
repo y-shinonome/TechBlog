@@ -54,7 +54,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
         </Link>
       </div>
       <div className="flex">
-        <div className="w-[50vw] h-[31vw] max-w-[280px] max-h-[170px] relative flex-shrink-0 mr-3">
+        <div className="relative mr-3 h-[31vw] max-h-[170px] w-[50vw] max-w-[280px] flex-shrink-0">
           <Link href={`/posts/${post.id}`}>
             <a>
               <Image
@@ -70,7 +70,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
         </div>
         <div className="flex flex-col justify-between">
           <div>
-            <ul className="flex flex-wrap mb-2">
+            <ul className="mb-2 flex flex-wrap">
               {post.categories.map((category, index) => (
                 <li key={index} className="mb-2 mr-3 text-xs">
                   <Link href={`/categories/${category.id}/1`}>

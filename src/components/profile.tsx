@@ -10,8 +10,8 @@ type Props = {
 const Profile: React.FC<Props> = ({ className }) => {
   return (
     <article className={className}>
-      <div className="flex items-center mb-2">
-        <div className="h-[100px] w-[100px] relative">
+      <div className="mb-2 flex items-center">
+        <div className="relative h-[100px] w-[100px]">
           <Image
             src="/images/cube.png"
             alt="sample"
@@ -29,7 +29,7 @@ const Profile: React.FC<Props> = ({ className }) => {
         </p>
       </div>
       <ul className="flex">
-        <li className="inline-flex items-center mr-3">
+        <li className="mr-3 inline-flex items-center">
           <FaTwitter className="mr-1 text-lg" />
           <ExternalLink
             href="https://twitter.com/snnnnnnnnnnnm"

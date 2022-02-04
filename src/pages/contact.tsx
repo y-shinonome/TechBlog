@@ -42,15 +42,15 @@ const Contact: NextPage = () => {
   return (
     <>
       <Meta subTitle="お問い合わせ" type="article" />
-      <article className="flex justify-center mb-12">
+      <article className="mb-12 flex justify-center">
         <form className="w-full" onSubmit={handleSubmit}>
-          <h2 className="inline-flex items-center mb-10 text-2xl font-bold">
+          <h2 className="mb-10 inline-flex items-center text-2xl font-bold">
             お問い合わせ
           </h2>
-          <div className="flex items-baseline mb-8">
+          <div className="mb-8 flex items-baseline">
             <label
               htmlFor="fullname"
-              className="block flex-shrink-0 mb-2 w-28 font-medium"
+              className="mb-2 block w-28 flex-shrink-0 font-medium"
             >
               お名前
             </label>
@@ -61,14 +61,14 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setFullname(e.target.value)
               }}
-              className="border-commonBlack/50 block p-2.5 w-full border"
+              className="block w-full border border-commonBlack/50 p-2.5"
               placeholder="山田太郎"
             />
           </div>
-          <div className="flex items-baseline mb-8">
+          <div className="mb-8 flex items-baseline">
             <label
               htmlFor="email"
-              className="block flex-shrink-0 mb-2 w-28 font-medium"
+              className="mb-2 block w-28 flex-shrink-0 font-medium"
             >
               メールアドレス
             </label>
@@ -79,14 +79,14 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
-              className="border-commonBlack/50 block p-2.5 w-full border"
+              className="block w-full border border-commonBlack/50 p-2.5"
               placeholder="xxxxx@xxx.com"
             />
           </div>
-          <div className="flex items-baseline mb-8">
+          <div className="mb-8 flex items-baseline">
             <label
               htmlFor="message"
-              className="block flex-shrink-0 mb-2 w-28 font-medium"
+              className="mb-2 block w-28 flex-shrink-0 font-medium"
             >
               メッセージ
             </label>
@@ -97,7 +97,7 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setMessage(e.target.value)
               }}
-              className="border-commonBlack/50 block p-2.5 w-full border"
+              className="block w-full border border-commonBlack/50 p-2.5"
               placeholder="お問い合わせ内容を入力してください"
             ></textarea>
           </div>

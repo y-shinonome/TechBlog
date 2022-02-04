@@ -25,14 +25,14 @@ const Layout: React.FC<Props> = ({ children }) => {
         <Header />
         {useGetWindowWidth() < 768 && <SideBar />}
       </sideBarContext.Provider>
-      <div className="max-w-[1100px] mx-auto px-3 md:flex md:px-6">
-        <div className="md:mr-8 md:w-full overflow-x-hidden">{children}</div>
+      <div className="mx-auto max-w-[1100px] px-3 md:flex md:px-6">
+        <div className="overflow-x-hidden md:mr-8 md:w-full">{children}</div>
         {useGetWindowWidth() >= 768 && (
           <Aside className="w-[25vw] max-w-[250px] flex-shrink-0" />
         )}
       </div>
       <div className="border-t-[1px] border-commonBlack/20" />
-      <Footer className="max-w-[1100px] mx-auto px-3 md:px-6" />
+      <Footer className="mx-auto max-w-[1100px] px-3 md:px-6" />
     </>
   )
 }

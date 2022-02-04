@@ -20,7 +20,7 @@ const CustomImg: React.FC<Props> = ({ src, width, height, alt }) => {
           height={height}
         />
       ) : (
-        <div className="h-[60vw] max-h-[462px] md:h-[calc(60vw-18vw)] relative w-full">
+        <div className="relative h-[60vw] max-h-[462px] w-full md:h-[calc(60vw-18vw)]">
           <Image
             src={src}
             alt={alt}

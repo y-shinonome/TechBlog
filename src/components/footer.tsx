@@ -10,7 +10,7 @@ type props = {
 const Footer: React.FC<props> = ({ className }) => {
   return (
     <div className={className}>
-      <footer className="flex flex-wrap justify-between w-full">
+      <footer className="flex w-full flex-wrap justify-between">
         <Copyright />
         <Links />
         <Others />

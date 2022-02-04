@@ -37,7 +37,7 @@ const CategoriesSplit: NextPage<Props> = ({
   return (
     <>
       <Meta />
-      <h2 className="text-commonBlack/60 mb-12 font-bold">
+      <h2 className="mb-12 font-bold text-commonBlack/60">
         {categoryName}の投稿一覧
       </h2>
       <ul>

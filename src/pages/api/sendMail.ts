@@ -4,8 +4,8 @@ import sgMail from '@sendgrid/mail'
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
-
-    const msg = [{
+  const msg = [
+    {
       to: req.body.email,
       from: {
         name: 'TECHBLOG | 問合わせ受付完了メール',
@@ -14,7 +14,7 @@ const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
       templateId: process.env.SENDGRID_TEMPLATE_ID,
       dynamicTemplateData: {
         name: req.body.fullname,
-        subject:'お問合せありがとうございます。',
+        subject: 'お問合せありがとうございます。',
         message: req.body.message,
       },
     },
@@ -27,22 +27,23 @@ const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
       templateId: process.env.SENDGRID_TEMPLATE_ID,
       dynamicTemplateData: {
         name: req.body.fullname,
-        subject:'お問合せありがとうございます。',
+        subject: 'お問合せありがとうございます。',
         message: req.body.message,
       },
-    }]
-    try {
-      await sgMail.send(msg)
-      res.status(200).json({
-        caption: '送信成功',
-        className: 'bg-[#DEDEFF] pointer-events-none',
-      })
-    } catch (error: any) {
-      res.status(500).json({
-        caption: '送信失敗',
-        className: 'bg-[#FFDEDE] pointer-events-none',
-      })
-    }
+    },
+  ]
+  try {
+    await sgMail.send(msg)
+    res.status(200).json({
+      caption: '送信成功',
+      className: 'bg-[#DEDEFF] pointer-events-none',
+    })
+  } catch (error: any) {
+    res.status(500).json({
+      caption: '送信失敗',
+      className: 'bg-[#FFDEDE] pointer-events-none',
+    })
+  }
 }
 
 export default sendMail

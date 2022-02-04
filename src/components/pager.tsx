@@ -13,7 +13,7 @@ type props = {
 
 const Pager: React.FC<props> = ({ pages, index, className }) => {
   return (
-    <div className={`flex flex-wrap justify-between w-full ${className}`}>
+    <div className={`flex w-full flex-wrap justify-between ${className}`}>
       {pages[index + 1] !== undefined && (
         <div className="mb-3 mr-5">
           <p className="font-medium">Older</p>

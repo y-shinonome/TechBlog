@@ -10,8 +10,9 @@ export const useGetWindowWidth = () => {
     onResize()
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
-  },[])
+  }, [])
 
-  const correctWindowWidth = typeof windowWidth === "undefined" ? 0 : windowWidth
+  const correctWindowWidth =
+    typeof windowWidth === 'undefined' ? 0 : windowWidth
   return correctWindowWidth
 }

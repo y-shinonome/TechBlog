@@ -16,8 +16,8 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="fixed z-20 flex justify-center w-full">
-        <h1 className="max-w-[1100px] my-1 px-3 w-full text-commonWhite text-2xl font-bold md:px-6">
+      <div className="fixed z-20 flex w-full justify-center">
+        <h1 className="my-1 w-full max-w-[1100px] px-3 text-2xl font-bold text-commonWhite md:px-6">
           <Link href="/1">
             <a>TECH BLOG</a>
           </Link>
@@ -25,16 +25,16 @@ const Header: React.FC = () => {
       </div>
       {useGetWindowWidth() < 768 && (
         <button
-          className="hover-bright fixed z-30 right-0 mr-3 my-1 p-1 text-center text-commonWhite text-3xl rounded-lg mix-blend-difference"
+          className="hover-bright fixed right-0 z-30 my-1 mr-3 rounded-lg p-1 text-center text-3xl text-commonWhite mix-blend-difference"
           aria-label="メニューボタン"
           onClick={toggleSideBar}
         >
           {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
         </button>
       )}
-      <div className="h-[50px] w- bg-commonBlack/90"></div>
+      <div className="w- h-[50px] bg-commonBlack/90"></div>
       <div
-        className="h-[70px] top-[-6px] bg-commonBlack/90 backdrop-blur-[2px] sticky z-10 mb-10"
+        className="sticky top-[-6px] z-10 mb-10 h-[70px] bg-commonBlack/90 backdrop-blur-[2px]"
         style={{ clipPath: 'url(#headerClip)' }}
       >
         <svg>

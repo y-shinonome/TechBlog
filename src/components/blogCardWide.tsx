@@ -41,8 +41,8 @@ const BlogCardWide: NextPage<Props> = ({ post }) => {
   return (
     <section className="mb-20">
       <div className="flex">
-        <div className="w-[35vw] md:w-[25vw] md:max-w-[263px] flex-col flex-shrink-0">
-          <div className="h-[21vw] md:h-[15vw] md:max-h-[165px] relative mb-2 mr-3">
+        <div className="w-[35vw] flex-shrink-0 flex-col md:w-[25vw] md:max-w-[263px]">
+          <div className="relative mb-2 mr-3 h-[21vw] md:h-[15vw] md:max-h-[165px]">
             <Link href={`/posts/${post.id}`}>
               <a>
                 <Image
@@ -56,7 +56,7 @@ const BlogCardWide: NextPage<Props> = ({ post }) => {
               </a>
             </Link>
           </div>
-          <ul className="flex flex-wrap mb-2">
+          <ul className="mb-2 flex flex-wrap">
             {post.categories.map((category, index) => (
               <li key={index} className="mb-2 mr-3 text-xs">
                 <Link href={`/categories/${category.id}/1`}>

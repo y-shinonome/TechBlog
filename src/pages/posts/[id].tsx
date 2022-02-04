@@ -55,7 +55,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
       />
       <section>
         <h1 className="mb-10 text-4xl font-bold">{post.title}</h1>
-        <div className="flex flex-wrap mb-4 text-sm">
+        <div className="mb-4 flex flex-wrap text-sm">
           <time dateTime={post.publishedDate.toString()} className="mb-1 mr-4">
             {publishDate}に公開
           </time>
@@ -65,7 +65,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             </time>
           )}
         </div>
-        <ul className="flex flex-wrap mb-6">
+        <ul className="mb-6 flex flex-wrap">
           {post.categories.map((category, index) => (
             <li key={index} className="mb-2 mr-2">
               <Link href={`/categories/${category.id}/1`}>
@@ -82,7 +82,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             __html: `${post.description}`,
           }}
         />
-        <div className="h-[60vw] md:h-[calc(60vw-18vw)] md:max-h-[495px] relative mb-6 w-full">
+        <div className="relative mb-6 h-[60vw] w-full md:h-[calc(60vw-18vw)] md:max-h-[495px]">
           <Image
             src={post.heroImage.url}
             alt={post.title}
@@ -92,7 +92,7 @@ const Post: React.FC<props> = ({ source, post, pages }) => {
             objectFit="contain"
           />
         </div>
-        <div className="prose prose-custom prose-code:bg-commonBlack/5 prose-h2:pb-1 prose-h2:border-b-2 prose-h2:border-commonBlack/40 prose-h3:underline prose-h3:decoration-commonBlack/40 prose-h3:decoration-dotted prose-h3:underline-offset-4 prose-em:not-italic prose-em:bg-commonBlack/5 prose-em:px-1 max-w-none mb-12">
+        <div className="prose prose-custom mb-12 max-w-none prose-h2:border-b-2 prose-h2:border-commonBlack/40 prose-h2:pb-1 prose-h3:underline prose-h3:decoration-commonBlack/40 prose-h3:decoration-dotted prose-h3:underline-offset-4 prose-em:bg-commonBlack/5 prose-em:px-1 prose-em:not-italic prose-code:bg-commonBlack/5">
           <MDXRemote {...source} components={components} />
         </div>
         <Pager pages={pages} index={index} className="mb-12" />

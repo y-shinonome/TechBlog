@@ -22,7 +22,7 @@ const CustomLink: React.FC<Props> = ({ href, ...otherProps }) => {
           className="text-link"
         >
           {otherProps.children}
-          <FiExternalLink className="inline ml-1" />
+          <FiExternalLink className="ml-1 inline" />
         </a>
       )}
     </>

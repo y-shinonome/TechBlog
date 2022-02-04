@@ -8,7 +8,7 @@ type Props = {
 const SnsShareButton: React.FC<Props> = ({ className, children }) => {
   return (
     <div
-      className={`inline-flex items-center justify-around mb-2 mr-2 w-16 h-10 hover:text-commonWhite text-2xl active:bg-opacity-40 border active:border-opacity-0 transition ${className}`}
+      className={`mb-2 mr-2 inline-flex h-10 w-16 items-center justify-around border text-2xl transition hover:text-commonWhite active:border-opacity-0 active:bg-opacity-40 ${className}`}
     >
       {children}
     </div>

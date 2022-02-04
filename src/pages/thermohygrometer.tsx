@@ -7,11 +7,13 @@ import ja from 'date-fns/locale/ja'
 import Thermohygrograph from '../components/thermohygrograph'
 import { fetchThermohygroData } from '../utils/firestore'
 
-type measurement = {
+type measurement =
+  | {
       datetime: string
       temperature: number
       humidity: number
-    }[] | undefined
+    }[]
+  | undefined
 
 const initData: measurement = [
   {
@@ -86,9 +88,9 @@ const Thermohygrometer: NextPage = () => {
           onChange={handleRadioChange}
         />
         日付指定
-        <div className="inline-block ml-4">
+        <div className="ml-4 inline-block">
           <DatePicker
-            className="border-commonBlack/50 border"
+            className="border border-commonBlack/50"
             dateFormat="yyyy/MM/dd"
             locale="ja"
             selected={selectedDate}
@@ -96,7 +98,7 @@ const Thermohygrometer: NextPage = () => {
           />
         </div>
       </div>
-      <button className="button-common px-2 my-3" onClick={handleFetch}>
+      <button className="button-common my-3 px-2" onClick={handleFetch}>
         データ取得
       </button>
       <Thermohygrograph measurementData={measurementData} />
