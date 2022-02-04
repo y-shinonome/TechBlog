@@ -1,6 +1,14 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import dayjs from 'dayjs'
-import { query, collection, orderBy, limit, getDocs } from 'firebase/firestore'
+import {
+  query,
+  collection,
+  orderBy,
+  limit,
+  startAt,
+  endAt,
+  getDocs,
+} from 'firebase/firestore'
 import { firestore } from '../utils/firebase'
 import {
   ResponsiveContainer,
@@ -12,6 +20,13 @@ import {
   Tooltip,
   Legend,
 } from 'recharts'
+import DatePicker, { registerLocale } from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
+import ja from 'date-fns/locale/ja'
+
+type Props = {
+  className?: string
+}
 
 type measurement = {
   datetime: string
@@ -19,51 +34,117 @@ type measurement = {
   humidity: number
 }[]
 
-const Thermohygrograph: React.FC = () => {
-  const initData: measurement = [
-    {
-      datetime: '0',
-      temperature: 0,
-      humidity: 0,
-    },
-    {
-      datetime: '0',
-      temperature: 0,
-      humidity: 0,
-    },
-  ]
+const initData: measurement = [
+  {
+    datetime: '0',
+    temperature: 0,
+    humidity: 0,
+  },  {
+    datetime: '0',
+    temperature: 0,
+    humidity: 0,
+  }
+]
+const initialDate = new Date()
+
+registerLocale('ja', ja)
+
+const Thermohygrograph: React.FC<Props> = ({ className }) => {
+  const [startDate, setStartDate] = useState(dayjs().toDate())
+  const [endDate, setEndDate] = useState(dayjs().add(-1, 'd').toDate())
   const [measurementData, setMeasurementData] = useState(initData)
+  const [queryCondition, setQueryCondition] = useState('latest')
+  const [selectedDate, setSelectedDate] = useState(initialDate)
 
   useEffect(() => {
-    fetchMesurement()
-  }, [])
+    fetchSnapshot()
+  }, [endDate])
 
-  const fetchMesurement = async () => {
-    const q = query(
-      collection(firestore, 'thermohygrometer'),
-      orderBy('datetime', 'desc'),
-      limit(24)
-    )
-    const querySnapshot = await getDocs(q)
-    const snapshot: measurement = querySnapshot.docs.map((doc) => {
-      const datetime = dayjs(doc.data().datetime.seconds * 1000).format(
-        'YYYY/MM/DD HH:mm'
+  const fetchSnapshot = async () => {
+    try {
+      const q = query(
+        collection(firestore, 'thermohygrometer'),
+        orderBy('datetime', 'desc'),
+        startAt(startDate),
+        endAt(endDate),
+        limit(48)
       )
-      return {
-        datetime: datetime,
-        temperature: doc.data().temperature,
-        humidity: doc.data().humidity,
+      const querySnapshot = await getDocs(q)
+      const snapshot: measurement = querySnapshot.docs.map((doc) => {
+        const datetime = dayjs(doc.data().datetime.seconds * 1000).format(
+          'YYYY/MM/DD HH:mm'
+        )
+        return {
+          datetime: datetime,
+          temperature: doc.data().temperature,
+          humidity: doc.data().humidity,
+        }
+      })
+      if (snapshot.length === 0) {
+        setMeasurementData(initData)
+      } else {
+        setMeasurementData(snapshot.reverse())
       }
-    })
-    setMeasurementData(snapshot.reverse())
+    } catch (e) {
+      console.error(e)
+    }
   }
 
-  const roundNearest5 = (x: number) => {
-    return (Math.round((x * 2) / 10) * 10) / 2
+  const handleFetch = () => {
+    if (queryCondition === 'latest') {
+      setStartDate(dayjs().toDate())
+      setEndDate(dayjs().add(-1, 'd').toDate())
+    } else if (queryCondition === 'past') {
+      setStartDate(dayjs(selectedDate).startOf('day').add(1, 'd').toDate())
+      setEndDate(dayjs(selectedDate).startOf('day').toDate())
+    }
+    //この処理の後useEffectの依存配列によりfetchSnapshot()が実行される
+  }
+
+  const handleChange = (date: Date) => {
+    setSelectedDate(date)
+    setQueryCondition('past')
+  }
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQueryCondition(e.target.value)
   }
 
   return (
-    <div className="mb-20">
+    <div className={className}>
+      <div>
+        <input
+          type="radio"
+          name="fetch"
+          value="latest"
+          checked={queryCondition === 'latest'}
+          onChange={handleOnChange}
+        />
+        最新24時間データ<br/>
+        <input
+          className='my-2'
+          type="radio"
+          name="fetch"
+          value="past"
+          checked={queryCondition === 'past'}
+          onChange={handleOnChange}
+        />
+        日付指定
+        <div className='inline-block ml-4'>
+          <DatePicker
+            className='border-commonBlack/50 border'
+            dateFormat='yyyy/MM/dd'
+            locale='ja'
+            selected={selectedDate}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
+
+      <button className="button-common px-2 my-2" onClick={handleFetch}>
+        データ取得
+      </button>
+
       <ResponsiveContainer width="100%" height={400}>
         <LineChart
           data={measurementData}
@@ -75,6 +156,7 @@ const Thermohygrograph: React.FC = () => {
             dataKey="temperature"
             stroke="#CC3333"
             yAxisId={1}
+            dot={false}
           />
           <Line
             name="湿度"
@@ -82,6 +164,7 @@ const Thermohygrograph: React.FC = () => {
             dataKey="humidity"
             stroke="#3333CC"
             yAxisId={2}
+            dot={false}
           />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
           <Legend verticalAlign="top" />
@@ -96,11 +179,9 @@ const Thermohygrograph: React.FC = () => {
             unit="℃"
             stroke="#CC3333"
             width={45}
-            tickCount={6}
-            domain={[
-              (dataMin: number) => roundNearest5(dataMin) - 5,
-              (dataMax: number) => roundNearest5(dataMax) + 15,
-            ]}
+            tickCount={5}
+            domain={[10, 30]}
+            allowDataOverflow={true}
           />
           <YAxis
             yAxisId={2}
@@ -108,11 +189,9 @@ const Thermohygrograph: React.FC = () => {
             stroke="#3333CC"
             orientation="right"
             width={45}
-            tickCount={6}
-            domain={[
-              (dataMin: number) => roundNearest5(dataMin) - 15,
-              (dataMax: number) => roundNearest5(dataMax) + 5,
-            ]}
+            tickCount={7}
+            domain={[20, 80]}
+            allowDataOverflow={true}
           />
           <Tooltip />
         </LineChart>
