@@ -101,7 +101,7 @@ const Thermohygrometer: NextPage = () => {
       <button className="button-common my-3 px-2" onClick={handleFetch}>
         データ取得
       </button>
-      <Thermohygrograph measurementData={measurementData} />
+      <Thermohygrograph measurementData={measurementData} className="mb-20" />
     </>
   )
 }
