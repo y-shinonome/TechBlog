@@ -7,7 +7,7 @@ const Copyright: React.FC = () => {
     <article className="mr-[10vw] mb-6 mt-3">
       <h2 className="mb-3 text-lg font-medium">Copyright</h2>
       <p className="text-sm">
-        {`© ${currentYear} shinonome`}
+        {`© 2021-${currentYear} shinonome`}
         <br />
         All Rights Reserved.
         <br />
