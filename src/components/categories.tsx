@@ -12,6 +12,7 @@ const categoryList = [
   { id: 'q0jqdrn4c', name: 'Next.js' },
   { id: 'gzy0dpzii6', name: 'TypeScript' },
   { id: 'w2cw_6sfs', name: 'ブログ構築' },
+  { id: 'mz2jnzo2e', name: 'RaspberryPi' },
 ]
 
 const Categories: React.FC<Props> = ({ className }) => {
