@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 .hover-common {
-  @apply hover:bg-commonBlack/5 hover:duration-300 active:bg-commonBlack/10 dark:hover:bg-commonWhite/5 dark:active:bg-commonWhite/10;
+  @apply duration-300 hover:bg-commonBlack/5 active:bg-commonBlack/10 dark:hover:bg-commonWhite/5 dark:active:bg-commonWhite/10;
 }
 
 .text-link {
-  @apply underline hover:text-[#1111EE] dark:hover:text-[#9999FF];
+  @apply underline hover:text-[#1111EE] hover:duration-300 dark:hover:text-[#9999FF];
 }
 
 .button-common {
-  @apply inline-flex items-center bg-commonBlack/5 hover:bg-commonBlack/10 hover:duration-300 active:bg-commonBlack/20 dark:bg-commonWhite/10 dark:hover:bg-commonWhite/20 dark:active:bg-commonWhite/30;
+  @apply inline-flex items-center bg-commonBlack/5 transition-[background-color] duration-300 hover:bg-commonBlack/10 active:bg-commonBlack/20 dark:bg-commonWhite/10 dark:hover:bg-commonWhite/20 dark:active:bg-commonWhite/30;
 }
 
 .title-clip {

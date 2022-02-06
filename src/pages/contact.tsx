@@ -101,9 +101,7 @@ const Contact: NextPage = () => {
               placeholder="お問い合わせ内容を入力してください"
             ></textarea>
           </div>
-          <button
-            className={`ml-28 px-10 py-1 text-lg transition ${result.className}`}
-          >
+          <button className={`ml-28 px-10 py-1 text-lg ${result.className}`}>
             {result.caption}
           </button>
         </form>
