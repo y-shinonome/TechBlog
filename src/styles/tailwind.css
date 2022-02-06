@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 .hover-common {
   @apply transition-[background-color] duration-300 hover:bg-commonBlack/5 active:bg-commonBlack/10 dark:hover:bg-commonWhite/5 dark:active:bg-commonWhite/10;
 }
