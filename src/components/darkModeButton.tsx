@@ -30,7 +30,7 @@ const DarkModeButton: React.FC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <button
-        className="w-16 rounded-full bg-[#EEEE88] dark:bg-[#333649]"
+        className="w-16 rounded-full bg-[#f8f8a6] dark:bg-[#333649]"
         onClick={toggleDarkMode}
       >
         <div className="relative left-[-16px] m-[2px] inline-block rounded-full bg-commonWhite p-1 align-middle text-xl duration-300 dark:left-[16px] dark:bg-commonBlack">

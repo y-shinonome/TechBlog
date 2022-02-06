@@ -11,7 +11,7 @@
 }
 
 .button-common {
-  @apply inline-flex items-center border border-commonBlack hover:bg-commonBlack hover:text-commonWhite hover:duration-300 active:border-opacity-0 active:bg-opacity-40 dark:border-[#DDDDDD] dark:hover:bg-[#DDDDDD] dark:hover:text-commonBlack;
+  @apply inline-flex items-center bg-commonBlack/5 hover:bg-commonBlack/10 hover:duration-300 active:bg-commonBlack/20 dark:bg-commonWhite/10 dark:hover:bg-commonWhite/20 dark:active:bg-commonWhite/30;
 }
 
 .title-clip {
