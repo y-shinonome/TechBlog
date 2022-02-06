@@ -10,7 +10,7 @@ type Props = {
 const Aside: React.FC<Props> = ({ className }) => {
   return (
     <aside className={className}>
-      <DarkModeButton />
+      <DarkModeButton className="mb-5" />
       <Profile className="mb-6 md:mb-12" />
       <Categories className="mb-6 md:mb-12" />
       <Share className="mb-6 md:mb-12" />
