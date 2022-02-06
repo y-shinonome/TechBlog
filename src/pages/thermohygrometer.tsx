@@ -90,7 +90,7 @@ const Thermohygrometer: NextPage = () => {
         日付指定
         <div className="ml-4 inline-block">
           <DatePicker
-            className="border border-commonBlack/50 dark:border-commonWhite dark:bg-commonBlack"
+            className="border border-commonBlack/50 dark:border-commonWhite/50 dark:bg-commonBlack"
             dateFormat="yyyy/MM/dd"
             locale="ja"
             selected={selectedDate}

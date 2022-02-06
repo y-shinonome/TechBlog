@@ -61,7 +61,7 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setFullname(e.target.value)
               }}
-              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite dark:bg-commonBlack"
+              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite/50 dark:bg-commonBlack"
               placeholder="山田太郎"
             />
           </div>
@@ -79,7 +79,7 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
-              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite dark:bg-commonBlack"
+              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite/50 dark:bg-commonBlack"
               placeholder="xxxxx@xxx.com"
             />
           </div>
@@ -97,7 +97,7 @@ const Contact: NextPage = () => {
               onChange={(e) => {
                 setMessage(e.target.value)
               }}
-              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite dark:bg-commonBlack"
+              className="block w-full border border-commonBlack/50 p-2.5 dark:border-commonWhite/50 dark:bg-commonBlack"
               placeholder="お問い合わせ内容を入力してください"
             ></textarea>
           </div>
