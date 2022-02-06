@@ -42,42 +42,42 @@ const Share: React.FC<Props> = ({ className }) => {
       <h2 className="mb-1 text-lg font-bold">Share</h2>
 
       <TwitterShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#1DA1F2] hover:bg-[#1DA1F2]">
+        <SnsShareButton className="hover:text-[#1DA1F2] dark:hover:text-[#1DA1F2]">
           <FaTwitter />
         </SnsShareButton>
       </TwitterShareButton>
       <FacebookShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#1877f2] hover:bg-[#1877f2]">
+        <SnsShareButton className="hover:text-[#1877f2] dark:hover:text-[#1877f2]">
           <AiFillFacebook />
         </SnsShareButton>
       </FacebookShareButton>
       <LineShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#00b900] hover:bg-[#00b900]">
+        <SnsShareButton className="hover:text-[#00b900] dark:hover:text-[#00b900]">
           <SiLine />
         </SnsShareButton>
       </LineShareButton>
       <HatenaShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#00a4de] hover:bg-[#00a4de]">
+        <SnsShareButton className="hover:text-[#00a4de] dark:hover:text-[#00a4de]">
           <SiHatenabookmark />
         </SnsShareButton>
       </HatenaShareButton>
       <LinkedinShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#0a66c2] hover:bg-[#0a66c2]">
+        <SnsShareButton className="hover:text-[#0a66c2] dark:hover:text-[#0a66c2]">
           <FaLinkedin />
         </SnsShareButton>
       </LinkedinShareButton>
       <PinterestShareButton url={pageUrl} media={mediaUrl}>
-        <SnsShareButton className="hover:border-[#E60023] hover:bg-[#E60023]">
+        <SnsShareButton className="hover:text-[#E60023] dark:hover:text-[#E60023]">
           <SiPinterest />
         </SnsShareButton>
       </PinterestShareButton>
       <PocketShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#ee4056] hover:bg-[#ee4056]">
+        <SnsShareButton className="hover:text-[#ee4056] dark:hover:text-[#ee4056]">
           <SiPocket />
         </SnsShareButton>
       </PocketShareButton>
       <EmailShareButton url={pageUrl}>
-        <SnsShareButton className="hover:border-[#AB99BA] hover:bg-[#AB99BA]">
+        <SnsShareButton className="hover:text-[#AB99BA] dark:hover:text-[#AB99BA]">
           <IoIosMail />
         </SnsShareButton>
       </EmailShareButton>
