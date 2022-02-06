@@ -31,7 +31,7 @@ const Layout: React.FC<Props> = ({ children }) => {
           <Aside className="w-[25vw] max-w-[250px] flex-shrink-0" />
         )}
       </div>
-      <div className="border-t-[1px] border-commonBlack/20" />
+      <div className="border-t-[1px] border-commonBlack/20 dark:border-commonWhite/30" />
       <Footer className="mx-auto max-w-[1100px] px-3 md:px-6" />
     </>
   )

@@ -21,13 +21,13 @@ const SideBar: React.FC = () => {
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-20 h-[100vh] w-full bg-commonBlack/70 backdrop-blur-[2px] transition duration-300 ${
+        className={`fixed left-0 top-0 z-20 h-[100vh] w-full bg-commonBlack/70 backdrop-blur-[2px] duration-300 dark:bg-commonWhite/10 ${
           isOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
         } `}
         onClick={toggleSideBar}
       ></div>
       <Aside
-        className={`fixed right-0 top-0 z-20 h-[100vh] overflow-auto bg-commonWhite/80 pt-20 duration-300 ${
+        className={`fixed right-0 top-0 z-20 h-[100vh] overflow-auto bg-commonWhite/80 pt-20 duration-300 dark:bg-commonBlack/90 ${
           isOpen ? 'w-[70%] px-3' : 'w-0'
         }`}
       />

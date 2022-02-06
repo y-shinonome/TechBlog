@@ -14,7 +14,7 @@ const CodeBlock: React.FC<Props> = ({ className, ...otherProps }) => {
       language={language}
       PreTag="div"
       showLineNumbers={language !== 'shell' ? true : false}
-      className="rounded"
+      className=" rounded prose-code:!bg-[#1E1E1E]"
     >
       {String(otherProps.children).replace(/\n$/, '')}
     </SyntaxHighlighter>

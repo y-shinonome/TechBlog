@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Button from './button'
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs'
 
 type props = {
@@ -19,10 +18,10 @@ const Pager: React.FC<props> = ({ pages, index, className }) => {
           <p className="font-medium">Older</p>
           <Link href={`/posts/${pages[index + 1].id}`}>
             <a>
-              <Button className="py-[2px] px-2 text-sm">
+              <button className="button-common py-[2px] px-2 text-sm">
                 <BsArrowLeft className="mr-1" />
                 {pages[index + 1].title}
-              </Button>
+              </button>
             </a>
           </Link>
         </div>
@@ -32,10 +31,10 @@ const Pager: React.FC<props> = ({ pages, index, className }) => {
           <p className="font-medium">Newer</p>
           <Link href={`/posts/${pages[index - 1].id}`}>
             <a>
-              <Button className="py-[2px] px-2 text-sm">
+              <button className="button-common py-[2px] px-2 text-sm">
                 {pages[index - 1].title}
                 <BsArrowRight className="ml-2" />
-              </Button>
+              </button>
             </a>
           </Link>
         </div>

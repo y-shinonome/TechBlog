@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <h1 className="title-clip fixed z-20 bg-commonBlack py-1 pl-3 pr-5 text-xl font-bold text-commonWhite sm:py-2 sm:pr-8 sm:text-2xl md:pl-6">
+      <h1 className="title-clip dark: fixed z-20 bg-commonBlack py-1 pl-3 pr-5 text-xl font-bold text-commonWhite duration-300 dark:bg-[#CCCCCC] dark:text-commonBlack sm:py-2 sm:pr-8 sm:text-2xl md:pl-6">
         <Link href="/1">
           <a>TECH BLOG</a>
         </Link>
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
           {!isOpen ? <AiOutlineMenu /> : <VscChromeClose />}
         </button>
       )}
-      <div className="mb-10 h-[70px] bg-commonBlack"></div>
+      <div className="mb-10 h-[70px] bg-commonBlack duration-300 dark:bg-[#CCCCCC]"></div>
     </>
   )
 }
