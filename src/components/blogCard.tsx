@@ -4,7 +4,7 @@ import Link from 'next/link'
 import dayjs from 'dayjs'
 import timezone from 'dayjs/plugin/timezone'
 import utc from 'dayjs/plugin/utc'
-import { VscArrowRight } from 'react-icons/vsc'
+import { IoIosArrowForward } from 'react-icons/io'
 
 type Props = {
   post: {
@@ -74,7 +74,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
                 <li key={index} className="mb-2 mr-3 text-xs">
                   <Link href={`/categories/${category.id}/1`}>
                     <a>
-                      <button className="button-common py-[2px] px-1">
+                      <button className="button-common p-1">
                         {category.name}
                       </button>
                     </a>
@@ -102,9 +102,9 @@ const BlogCard: NextPage<Props> = ({ post }) => {
           <div>
             <Link href={`/posts/${post.id}`}>
               <a>
-                <button className="button-common px-1">
-                  投稿を読む
-                  <VscArrowRight className="ml-1" />
+                <button className="button-common py-1 px-2">
+                  記事を読む
+                  <IoIosArrowForward className="ml-1" />
                 </button>
               </a>
             </Link>

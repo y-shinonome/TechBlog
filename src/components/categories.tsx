@@ -23,7 +23,9 @@ const Categories: React.FC<Props> = ({ className }) => {
           <li key={index} className="mb-2 mr-2">
             <Link href={`/categories/${category.id}/1`}>
               <a>
-                <button className="button-common px-1">{category.name}</button>
+                <button className="button-common px-2 py-1">
+                  {category.name}
+                </button>
               </a>
             </Link>
           </li>

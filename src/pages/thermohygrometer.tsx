@@ -98,7 +98,10 @@ const Thermohygrometer: NextPage = () => {
           />
         </div>
       </div>
-      <button className="button-common my-3 px-2" onClick={handleFetch}>
+      <button
+        className="button-common my-4 px-6 py-1 text-lg"
+        onClick={handleFetch}
+      >
         データ取得
       </button>
       <Thermohygrograph measurementData={measurementData} className="mb-20" />
