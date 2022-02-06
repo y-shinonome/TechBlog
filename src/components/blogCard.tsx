@@ -39,7 +39,7 @@ const BlogCard: NextPage<Props> = ({ post }) => {
 
   return (
     <section className="mb-20">
-      <div className="hover-dark">
+      <div className="hover-common">
         <Link href={`/posts/${post.id}`}>
           <a>
             <h3 className="mb-3 text-lg font-bold">{post.title}</h3>

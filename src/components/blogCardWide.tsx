@@ -71,7 +71,7 @@ const BlogCardWide: NextPage<Props> = ({ post }) => {
         </div>
         <div className="flex-col">
           <Link href={`/posts/${post.id}`}>
-            <a className="hover-dark block">
+            <a className="hover-common block">
               <h2 className="mb-3 text-lg font-bold">{post.title}</h2>
               <div
                 className="mb-3 text-sm"

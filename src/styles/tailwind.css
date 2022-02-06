@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.hover-dark {
-  @apply hover:bg-commonBlack/10 hover:duration-300 active:bg-commonBlack/30 dark:hover:bg-commonWhite/10 dark:active:bg-commonWhite/30;
+.hover-common {
+  @apply hover:bg-commonBlack/5 hover:duration-300 active:bg-commonBlack/10 dark:hover:bg-commonWhite/5 dark:active:bg-commonWhite/10;
 }
 
 .text-link {

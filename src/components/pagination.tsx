@@ -23,7 +23,7 @@ const Pagination: React.FC<props> = ({
       <Link href={currentPage === 1 ? `/1` : `${frontPath}${currentPage - 1}`}>
         <a
           aria-label="次のページ"
-          className={`hover-dark mx-1 block px-1 py-2 ${
+          className={`hover-common mx-1 block px-1 py-2 ${
             currentPage === 1 &&
             'pointer-events-none text-commonBlack/30 dark:text-commonWhite/30'
           } `}
@@ -37,7 +37,7 @@ const Pagination: React.FC<props> = ({
           <li key={index}>
             <Link href={`${frontPath}${number}`}>
               <a
-                className={`hover-dark mx-1 block px-2 py-1 ${
+                className={`hover-common mx-1 block px-2 py-1 ${
                   currentPage === number &&
                   'pointer-events-none bg-commonBlack font-bold text-commonWhite dark:bg-[#DDDDDD] dark:text-commonBlack'
                 } `}
@@ -58,7 +58,7 @@ const Pagination: React.FC<props> = ({
       >
         <a
           aria-label="次のページ"
-          className={`hover-dark mx-1 block px-1 py-2 ${
+          className={`hover-common mx-1 block px-1 py-2 ${
             currentPage === Math.ceil(totalCount / 5) &&
             'pointer-events-none text-commonBlack/30 dark:text-commonWhite/30'
           } `}
