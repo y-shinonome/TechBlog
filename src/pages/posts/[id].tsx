@@ -10,6 +10,8 @@ import { client } from '../../utils/microCMS'
 import Meta from '../../components/meta'
 import CustomLink from '../../components/customLink'
 import CustomImage from '../../components/customImage'
+import CustomH2 from '../../components/customH2'
+import CustomH3 from '../../components/customH3'
 import Pager from '../../components/pager'
 import CodeBlock from '../../components/codeBlock'
 
@@ -30,6 +32,8 @@ const components = {
   a: CustomLink,
   image: CustomImage,
   code: CodeBlock,
+  h2: CustomH2,
+  h3: CustomH3,
 }
 
 dayjs.extend(timezone)
