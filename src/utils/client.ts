@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
 
 export const useGetWindowWidth = () => {
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined)
@@ -15,4 +16,19 @@ export const useGetWindowWidth = () => {
   const correctWindowWidth =
     typeof windowWidth === 'undefined' ? 0 : windowWidth
   return correctWindowWidth
+}
+
+export const usePath = (callback: (asPath: string) => void) => {
+  const refCallback = useRef<undefined | ((asPath: string) => void)>()
+  const asPath = useRouter().asPath
+
+  useEffect(() => {
+    refCallback.current = callback
+  }, [callback])
+
+  useEffect(() => {
+    if (refCallback.current) {
+      refCallback.current(asPath)
+    }
+  }, [asPath])
 }
