@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 import { usePath } from '../utils/client'
 
 type Props = {
-  className: string
+  className?: string
 }
 
-const Aside: React.FC<Props> = ({ className }) => {
-  const [Path, setPath] = useState('')
+const Tocbot: React.FC<Props> = ({ className }) => {
+  const [path, setPath] = useState('')
 
   usePath((asPath) => {
     setPath(asPath)
@@ -20,14 +20,20 @@ const Aside: React.FC<Props> = ({ className }) => {
       headingSelector: 'h2, h3',
     })
     return () => tocbot.destroy()
-  }, [Path])
+  }, [path])
+
+  const firstPath = path.split('/')[1]
 
   return (
     <>
-      <h3 className="mb-1 text-lg font-bold">Index</h3>
-      <nav className={`toc mb-12 ${className}`} />
+      {firstPath === 'posts' && (
+        <div className={`${className}`}>
+          <h3 className="mb-1 text-lg font-bold">Contents</h3>
+          <nav className="toc" />
+        </div>
+      )}
     </>
   )
 }
 
-export default Aside
+export default Tocbot
