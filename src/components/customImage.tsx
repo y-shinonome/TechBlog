@@ -1,38 +1,44 @@
 import Image from 'next/image'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 
 type Props = {
   src: string
-  width?: string
-  height?: string
-  alt: string
+  wRatio?: number
+  hRatio?: number
 }
 
-const CustomImg: React.FC<Props> = ({ src, width, height, alt }) => {
+const CustomImg: React.FC<Props> = ({ src, wRatio = 16, hRatio = 10 }) => {
+  const alt = () => {
+    const regexp = src.match('.+/(.+?).[a-z]+([?#;].*)?$')
+    if (regexp) {
+      return regexp[1]
+    } else {
+      return 'undefined'
+    }
+  }
+
   return (
-    <div>
-      {typeof width !== 'undefined' ? (
+    <div css={style(wRatio, hRatio)}>
+      <div className="imgContainer">
         <Image
           src={src}
-          alt={alt}
+          alt={alt()}
           blurDataURL={`${src}?w=20&h=20`}
           placeholder="blur"
-          width={width}
-          height={height}
+          layout="fill"
+          objectFit="contain"
         />
-      ) : (
-        <div className="relative h-[60vw] max-h-[462px] w-full md:h-[calc(60vw-18vw)]">
-          <Image
-            src={src}
-            alt={alt}
-            blurDataURL={`${src}?w=20&h=20`}
-            placeholder="blur"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      )}
+      </div>
     </div>
   )
 }
 
 export default CustomImg
+
+const style = (wRatio: number, hRatio: number) => css`
+  .imgContainer {
+    position: relative;
+    aspect-ratio: ${wRatio} / ${hRatio};
+  }
+`
