@@ -10,6 +10,8 @@ const categoryList = [
   { id: 'mz2jnzo2e', name: 'RaspberryPi' },
   { id: 'ma6t88itybx', name: 'Docker' },
   { id: 'k-ucibgv-e6j', name: 'TailwindCSS' },
+  { id: 'ms46g78b-t', name: 'AWS' },
+  { id: 'mo334nsd6', name: 'Firebase' },
   { id: '9spc7kja6', name: '電子工作' },
   { id: 'ung4k6hoc', name: 'その他' },
 ]
