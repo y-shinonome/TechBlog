@@ -51,8 +51,8 @@ const Thermohygrograph: React.FC<Props> = ({ className, measurementData }) => {
           <Legend verticalAlign="top" />
           <XAxis
             dataKey="datetime"
-            tickCount={24}
             dy={5}
+            minTickGap={10}
             tickFormatter={(tickItem) => dayjs(tickItem).format('H:mm')}
           />
           <YAxis
