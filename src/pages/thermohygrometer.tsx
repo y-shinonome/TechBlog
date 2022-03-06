@@ -5,6 +5,7 @@ import DatePicker, { registerLocale } from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import ja from 'date-fns/locale/ja'
 import Thermohygrograph from '../components/thermohygrograph'
+import Meta from '../components/meta'
 import { fetchThermohygroData } from '../utils/firestore'
 
 type measurement =
@@ -69,6 +70,7 @@ const Thermohygrometer: NextPage = () => {
 
   return (
     <>
+      <Meta subTitle="温湿度計" />
       <div>
         <input
           type="radio"

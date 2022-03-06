@@ -10,7 +10,7 @@ type props = {
 const Meta: React.FC<props> = ({
   subTitle,
   description = '職業プログラマではないけど趣味でエンジニアリングをしています。モノづくり好きが高じてJamstack構成の爆速ブログを作ってみました。',
-  imageUrl = 'https://images.microcms-assets.io/assets/8fd73e43936d4dc891b4a5238994ad6b/f024a0c3614240b2811dbc43f7135ab7/cube.png',
+  imageUrl = 'https://images.microcms-assets.io/assets/8fd73e43936d4dc891b4a5238994ad6b/17206c5e182e40c7b10d3d9a14713f10/ogp_common.png',
   type = 'website',
 }) => {
   const title =
