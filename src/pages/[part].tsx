@@ -19,7 +19,7 @@ const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
       <Meta />
-      <h2 className="mb-12 font-bold text-commonBlack/60 dark:text-commonWhite/70">
+      <h2 className="mb-12 font-bold text-commonBlack/80 dark:text-commonWhite/70">
         すべての投稿一覧
       </h2>
       <ul>
