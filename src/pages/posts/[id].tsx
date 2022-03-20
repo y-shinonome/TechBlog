@@ -112,7 +112,7 @@ export const getStaticPaths = async () => {
   //microCMS_APIからpostsデータのidのみを全件取得する
   const PostData = await client.get({
     endpoint: 'posts',
-    queries: { fields: 'id' },
+    queries: { limit: 1000, fields: 'id' },
   })
   //ルーティングの情報を持ったparamsオブジェクトを配列の形で格納する
   const paths = PostData.contents.map((content: { id: string }) => ({
@@ -129,7 +129,11 @@ export const getStaticProps: GetStaticProps<props, params> = async ({
   params,
 }) => {
   const id = params?.id
-  const PostData: post = await client.get({ endpoint: 'posts', contentId: id })
+  const PostData: post = await client.get({
+    endpoint: 'posts',
+    contentId: id,
+    queries: { limit: 1000 },
+  })
   const source = PostData.body
   const mdxSource = await serialize(source)
   const pageData = await client.get({
