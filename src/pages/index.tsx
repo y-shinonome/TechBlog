@@ -15,7 +15,7 @@ type Props = {
   }
 }
 
-const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
+const Index: NextPage<Props> = ({ posts, pageCount }) => {
   return (
     <>
       <Meta />
@@ -44,35 +44,14 @@ const PostsSplit: NextPage<Props> = ({ posts, pageCount }) => {
   )
 }
 
-export const getStaticPaths = async () => {
-  //postsAPIからデータの総数を取得するためにidのみ取得する
-  const data = await client.get({
-    endpoint: 'posts',
-    queries: { fields: 'id' },
-  })
-  //postsデータの総数を元にルーティング用の配列を作成する関数
-  const range = (start: number, end: number) =>
-    [...Array(end - start + 1)].map((_, i) => start + i)
-  //5件毎に分割して投稿記事表示ページを作成する
-  const paths = range(2, Math.ceil(data.totalCount / 5)).map((number) => ({
-    params: { part: `${number}` },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  const offset = Number(params?.part) * 5 - 5
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const postData = await client.get({
     endpoint: 'posts',
-    queries: { limit: 5, offset: offset },
+    queries: { limit: 5 },
   })
   const pageCount = {
     totalCount: postData.totalCount,
-    part: Number(params?.part),
+    part: 1,
   }
 
   return {
@@ -83,4 +62,4 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   }
 }
 
-export default PostsSplit
+export default Index

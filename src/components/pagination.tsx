@@ -20,22 +20,24 @@ const Pagination: React.FC<props> = ({
 
   return (
     <div className={`flex items-center justify-center text-xl ${cllassName}`}>
-      <Link href={currentPage === 1 ? `/1` : `${frontPath}${currentPage - 1}`}>
-        <a
-          aria-label="前のページ"
-          className={`hover-common mx-1 block px-1 py-2 ${
-            currentPage === 1 &&
-            'pointer-events-none text-commonBlack/30 dark:text-commonWhite/30'
-          } `}
-        >
+      {currentPage === 1 ? (
+        <span className="mx-1 block px-1 py-2 text-commonBlack/30 dark:text-commonWhite/30">
           <IoIosArrowBack />
-        </a>
-      </Link>
-
+        </span>
+      ) : (
+        <Link href={currentPage === 2 ? `/` : `${frontPath}${currentPage - 1}`}>
+          <a
+            aria-label="前のページ"
+            className="hover-common mx-1 block px-1 py-2"
+          >
+            <IoIosArrowBack />
+          </a>
+        </Link>
+      )}
       <ul className="flex">
         {range(1, Math.ceil(totalCount / 5)).map((number, index) => (
           <li key={index}>
-            <Link href={`${frontPath}${number}`}>
+            <Link href={number === 1 ? `/` : `${frontPath}${number}`}>
               <a
                 className={`hover-common mx-1 block px-2 py-1 ${
                   currentPage === number &&
@@ -48,24 +50,20 @@ const Pagination: React.FC<props> = ({
           </li>
         ))}
       </ul>
-
-      <Link
-        href={
-          currentPage === Math.ceil(totalCount / 5)
-            ? `/1`
-            : `${frontPath}${currentPage + 1}`
-        }
-      >
-        <a
-          aria-label="次のページ"
-          className={`hover-common mx-1 block px-1 py-2 ${
-            currentPage === Math.ceil(totalCount / 5) &&
-            'pointer-events-none text-commonBlack/30 dark:text-commonWhite/30'
-          } `}
-        >
+      {currentPage === Math.ceil(totalCount / 5) ? (
+        <span className="mx-1 block px-1 py-2 text-commonBlack/30 dark:text-commonWhite/30">
           <IoIosArrowForward />
-        </a>
-      </Link>
+        </span>
+      ) : (
+        <Link href={`${frontPath}${currentPage + 1}`}>
+          <a
+            aria-label="次のページ"
+            className="hover-common mx-1 block px-1 py-2"
+          >
+            <IoIosArrowForward />
+          </a>
+        </Link>
+      )}
     </div>
   )
 }
