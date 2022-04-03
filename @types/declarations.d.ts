@@ -1,4 +1,4 @@
-//microcms-js-sdkのcreateClient関数のための型拡張
+//環境変数のための型拡張
 namespace NodeJS {
   interface ProcessEnv {
     readonly MICROCMS_SERVICE_DOMAIN: string
@@ -6,8 +6,9 @@ namespace NodeJS {
     readonly SENDGRID_API_KEY: string
     readonly SENDGRID_FROM_EMAIL: string
     readonly SENDGRID_TEMPLATE_ID: string
+    readonly NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: string
   }
-} 
+}
 
 type post = {
   id: string
