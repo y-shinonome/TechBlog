@@ -15,17 +15,19 @@ const Tocbot: React.FC<Props> = ({ className }) => {
     setPath(asPath)
   })
 
+  const firstPath = path.split('/')[1]
+
   useEffect(() => {
-    tocbot.init({
-      tocSelector: '.toc',
-      contentSelector: '.prose',
-      headingSelector: 'h2, h3',
-      collapseDepth: 6,
-    })
+    if (firstPath === 'posts') {
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.prose',
+        headingSelector: 'h2, h3',
+        collapseDepth: 6,
+      })
+    }
     return () => tocbot.destroy()
   }, [path])
-
-  const firstPath = path.split('/')[1]
 
   return (
     <>
