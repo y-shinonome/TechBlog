@@ -1,2 +1,9 @@
-User-Agent:*
+# *
+User-agent: *
 Allow: /
+
+# Host
+Host: https://techblog.shi-nono.me
+
+# Sitemaps
+Sitemap: https://techblog.shi-nono.me/sitemap.xml
