@@ -27,7 +27,7 @@ const Tocbot: React.FC<Props> = ({ className }) => {
       })
     }
     return () => tocbot.destroy()
-  }, [path])
+  }, [firstPath])
 
   return (
     <>
